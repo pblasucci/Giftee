@@ -2,3 +2,4 @@
 *.suo
 source/*/[bB]in/
 source/*/[oO]bj/
+*ReSharper*

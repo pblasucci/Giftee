@@ -6,7 +6,7 @@ open System.Net
 type formData = System.Collections.Specialized.NameValueCollection
 type cfgMgr   = System.Configuration.ConfigurationManager
 
-module Resx = Giftee.Core.Resources
+module R = Giftee.Core.Resources
 
 module Mail =
 
@@ -42,12 +42,12 @@ module Mail =
 
   let sendRegistered email password =
       send  systemAddress [email]
-            Resx.registeredLbl
-            (String.Format(Resx.registeredMsg,email,password))
+            R.MailSubj.registered
+            (String.Format(R.MailMsg.registered,email,password))
             ["registration"] 
 
   let sendPasswordReset email password =
     send  systemAddress [email]
-          Resx.pwdChangedLbl
-          (String.Format(Resx.pwdChangedMsg,email,password))
+          R.MailSubj.pwdChanged
+          (String.Format(R.MailMsg.pwdChanged,email,password))
           ["password_reset"] 

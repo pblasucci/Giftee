@@ -1,0 +1,149 @@
+﻿USE [master]
+GO
+/****** Object:  Database [Giftee]    Script Date: 10/27/2011 18:18:51 ******/
+CREATE DATABASE [Giftee] ON  PRIMARY 
+( NAME = N'Giftee', FILENAME = N'C:\working\projects\ThirdParty\Giftee\database\Giftee.mdf' , SIZE = 2048KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'Giftee_log', FILENAME = N'C:\working\projects\ThirdParty\Giftee\database\Giftee_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO
+ALTER DATABASE [Giftee] SET COMPATIBILITY_LEVEL = 100
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [Giftee].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [Giftee] SET ANSI_NULL_DEFAULT OFF
+GO
+ALTER DATABASE [Giftee] SET ANSI_NULLS OFF
+GO
+ALTER DATABASE [Giftee] SET ANSI_PADDING OFF
+GO
+ALTER DATABASE [Giftee] SET ANSI_WARNINGS OFF
+GO
+ALTER DATABASE [Giftee] SET ARITHABORT OFF
+GO
+ALTER DATABASE [Giftee] SET AUTO_CLOSE OFF
+GO
+ALTER DATABASE [Giftee] SET AUTO_CREATE_STATISTICS ON
+GO
+ALTER DATABASE [Giftee] SET AUTO_SHRINK OFF
+GO
+ALTER DATABASE [Giftee] SET AUTO_UPDATE_STATISTICS ON
+GO
+ALTER DATABASE [Giftee] SET CURSOR_CLOSE_ON_COMMIT OFF
+GO
+ALTER DATABASE [Giftee] SET CURSOR_DEFAULT  GLOBAL
+GO
+ALTER DATABASE [Giftee] SET CONCAT_NULL_YIELDS_NULL OFF
+GO
+ALTER DATABASE [Giftee] SET NUMERIC_ROUNDABORT OFF
+GO
+ALTER DATABASE [Giftee] SET QUOTED_IDENTIFIER OFF
+GO
+ALTER DATABASE [Giftee] SET RECURSIVE_TRIGGERS OFF
+GO
+ALTER DATABASE [Giftee] SET  DISABLE_BROKER
+GO
+ALTER DATABASE [Giftee] SET AUTO_UPDATE_STATISTICS_ASYNC OFF
+GO
+ALTER DATABASE [Giftee] SET DATE_CORRELATION_OPTIMIZATION OFF
+GO
+ALTER DATABASE [Giftee] SET TRUSTWORTHY OFF
+GO
+ALTER DATABASE [Giftee] SET ALLOW_SNAPSHOT_ISOLATION OFF
+GO
+ALTER DATABASE [Giftee] SET PARAMETERIZATION SIMPLE
+GO
+ALTER DATABASE [Giftee] SET READ_COMMITTED_SNAPSHOT OFF
+GO
+ALTER DATABASE [Giftee] SET HONOR_BROKER_PRIORITY OFF
+GO
+ALTER DATABASE [Giftee] SET  READ_WRITE
+GO
+ALTER DATABASE [Giftee] SET RECOVERY FULL
+GO
+ALTER DATABASE [Giftee] SET  MULTI_USER
+GO
+ALTER DATABASE [Giftee] SET PAGE_VERIFY CHECKSUM
+GO
+ALTER DATABASE [Giftee] SET DB_CHAINING OFF
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'Giftee', N'ON'
+GO
+USE [Giftee]
+GO
+/****** Object:  Table [dbo].[Giftors]    Script Date: 10/27/2011 18:18:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Giftors](
+	[ID] [uniqueidentifier] NOT NULL,
+	[FirstName] [varchar](63) NOT NULL,
+	[LastName] [varchar](63) NOT NULL,
+	[Email] [varchar](255) NOT NULL,
+	[Password] [varbinary](max) NOT NULL,
+	[IsAdmin] [bit] NOT NULL,
+	[GroupAs] [varchar](64) NULL,
+	[GifteeID] [uniqueidentifier] NULL,
+ CONSTRAINT [PK_Giftors] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY],
+ CONSTRAINT [UK_Giftors_Email] UNIQUE NONCLUSTERED 
+(
+	[Email] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Wishes]    Script Date: 10/27/2011 18:18:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Wishes](
+	[ID] [uniqueidentifier] NOT NULL,
+	[GiftorID] [uniqueidentifier] NOT NULL,
+	[Rank] [int] NOT NULL,
+	[Summary] [varchar](max) NOT NULL,
+ CONSTRAINT [PK_Wishes] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Default [DF_Giftors_ID]    Script Date: 10/27/2011 18:18:51 ******/
+ALTER TABLE [dbo].[Giftors] ADD  CONSTRAINT [DF_Giftors_ID]  DEFAULT (newid()) FOR [ID]
+GO
+/****** Object:  Default [DF_Giftors_IsAdmin]    Script Date: 10/27/2011 18:18:51 ******/
+ALTER TABLE [dbo].[Giftors] ADD  CONSTRAINT [DF_Giftors_IsAdmin]  DEFAULT ((0)) FOR [IsAdmin]
+GO
+/****** Object:  Default [DF_Wishes_ID]    Script Date: 10/27/2011 18:18:51 ******/
+ALTER TABLE [dbo].[Wishes] ADD  CONSTRAINT [DF_Wishes_ID]  DEFAULT (newid()) FOR [ID]
+GO
+/****** Object:  Default [DF_Wishes_Rank]    Script Date: 10/27/2011 18:18:51 ******/
+ALTER TABLE [dbo].[Wishes] ADD  CONSTRAINT [DF_Wishes_Rank]  DEFAULT ((0)) FOR [Rank]
+GO
+/****** Object:  ForeignKey [FK_Giftors_Giftors]    Script Date: 10/27/2011 18:18:51 ******/
+ALTER TABLE [dbo].[Giftors]  WITH CHECK ADD  CONSTRAINT [FK_Giftors_Giftors] FOREIGN KEY([GifteeID])
+REFERENCES [dbo].[Giftors] ([ID])
+GO
+ALTER TABLE [dbo].[Giftors] CHECK CONSTRAINT [FK_Giftors_Giftors]
+GO
+/****** Object:  ForeignKey [FK_Wishes_Giftors]    Script Date: 10/27/2011 18:18:51 ******/
+ALTER TABLE [dbo].[Wishes]  WITH CHECK ADD  CONSTRAINT [FK_Wishes_Giftors] FOREIGN KEY([GiftorID])
+REFERENCES [dbo].[Giftors] ([ID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[Wishes] CHECK CONSTRAINT [FK_Wishes_Giftors]
+GO

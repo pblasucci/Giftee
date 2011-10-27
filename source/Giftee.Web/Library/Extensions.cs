@@ -1,7 +1,7 @@
 ﻿using System;
+using log4net;
 using Microsoft.FSharp.Core;
 using Microsoft.FSharp.Collections;
-using System.Collections.Generic;
 
 namespace Giftee.Web
 {
@@ -34,6 +34,44 @@ namespace Giftee.Web
     {
       var areEq = ComparisonIdentity.Structural<_a>();
       return (areEq.Compare(left,right) != 0);
+    }
+  }
+
+  public static class LoggingExtensions
+  {
+    public static void Info(this   ILog      log, 
+                                   String    format, 
+                            params Object[]  data)
+    {
+      log.InfoFormat(format,data);
+    }
+
+    public static void Debug(this   ILog      log, 
+                                    String    format, 
+                             params Object[]  data)
+    {
+      log.DebugFormat(format,data);
+    }
+
+    public static void Warn(this   ILog      log, 
+                                   String    format, 
+                            params Object[]  data)
+    {
+      log.WarnFormat(format,data);
+    }
+
+    public static void Error(this   ILog      log, 
+                                    String    format, 
+                             params Object[]  data)
+    {
+      log.ErrorFormat(format,data);
+    }
+
+    public static void Fatal(this   ILog      log, 
+                                    String    format, 
+                             params Object[]  data)
+    {
+      log.FatalFormat(format,data);
     }
   }
 }

@@ -5,24 +5,24 @@ open System
 
 [<Table(Name="Giftors")>]
 type Giftor =
-  { [<Id>] ID   : Guid
-    FirstName   : string
-    LastName    : string
-    Email       : string
-    Password    : byte array
-    IsAdmin     : bool
-    ExcludeFrom : string option 
-    GifteeID    : Guid option }
+  { [<Id>] ID : Guid
+    FirstName : string
+    LastName  : string
+    Email     : string
+    Password  : byte array
+    IsAdmin   : bool
+    GroupAs   : string option 
+    GifteeID  : Guid option }
   with
     static member Empty =
-      { ID          = Guid.Empty
-        FirstName   = String.Empty
-        LastName    = String.Empty
-        Email       = String.Empty
-        Password    = Array.empty
-        IsAdmin     = false
-        ExcludeFrom = None
-        GifteeID    = None }
+      { ID        = Guid.Empty
+        FirstName = String.Empty
+        LastName  = String.Empty
+        Email     = String.Empty
+        Password  = Array.empty
+        IsAdmin   = false
+        GroupAs   = None
+        GifteeID  = None }
       
 [<Table(Name="Wishes")>]
 type Wish =

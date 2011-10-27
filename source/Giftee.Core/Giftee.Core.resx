@@ -134,8 +134,8 @@
 
 When next you visit http://giftee.ws, please log on with the following information:
             
-    E-Mail: %s
-    Password: %s
+    E-Mail: {0}
+    Password: {1}
 
 Seasons Greetings!</value>
     <comment>Message sent when an account password been reset.</comment>
@@ -145,10 +145,18 @@ Seasons Greetings!</value>
 
 In order to start using Giftee, you'll need to visit http://giftee.ws and enter the following information:
             
-    E-Mail: %s
-    Password: %s
+    E-Mail: {0}
+    Password: {1}
 
 Happy Holidays!</value>
     <comment>Message sent to newly registered accounts.</comment>
+  </data>
+  <data name="SQL_GiftorByEmail" xml:space="preserve">
+    <value>select Id,FirstName,LastName,Email,Password,IsAdmin,ExcludeFrom,GifteeId from Giftors where Email = /* email */''</value>
+    <comment>Queries a giftor record with the given e-mail.</comment>
+  </data>
+  <data name="SQL_GiftorWishes" xml:space="preserve">
+    <value>select Id,GiftorId,Rank,Summary from Wishes where GiftorId = /* giftorId */''</value>
+    <comment>Queries all wish records with the given giftor ID.</comment>
   </data>
 </root>

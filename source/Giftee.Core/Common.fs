@@ -9,7 +9,17 @@ module Resources =
                                 Assembly.GetExecutingAssembly())
 
   let loremIpsum    = resxMgr.GetString("LoremIpsum")
-  let registeredMsg = resxMgr.GetString("MailMsg_Registered")
-  let registeredLbl = resxMgr.GetString("MailLbl_Registered")
-  let pwdChangedMsg = resxMgr.GetString("MailMsg_PwdChanged")
-  let pwdChangedLbl = resxMgr.GetString("MailLbl_PwdChanged")
+
+  module MailMsg =
+
+    let registered = resxMgr.GetString("MailMsg_Registered")
+    let pwdChanged = resxMgr.GetString("MailMsg_PwdChanged")
+    
+  module MailSubj =
+
+    let registered = resxMgr.GetString("MailLbl_Registered")
+    let pwdChanged = resxMgr.GetString("MailLbl_PwdChanged")
+  
+  module SQL =
+    let giftorByEmail = resxMgr.GetString("SQL_GiftorByEmail")
+    let giftorWishes  = resxMgr.GetString("SQL_GiftorWishes")
