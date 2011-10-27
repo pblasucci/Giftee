@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Giftee.Web", "source\Giftee.Web\Giftee.Web.csproj", "{AE52D714-5CB9-4B73-A74B-19B06A875E6D}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Giftee.Core", "source\Giftee.Core\Giftee.Core.fsproj", "{C72969F6-E660-402F-8D5F-A552031E68CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE52D714-5CB9-4B73-A74B-19B06A875E6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE52D714-5CB9-4B73-A74B-19B06A875E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE52D714-5CB9-4B73-A74B-19B06A875E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE52D714-5CB9-4B73-A74B-19B06A875E6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C72969F6-E660-402F-8D5F-A552031E68CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C72969F6-E660-402F-8D5F-A552031E68CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C72969F6-E660-402F-8D5F-A552031E68CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C72969F6-E660-402F-8D5F-A552031E68CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

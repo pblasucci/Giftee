@@ -1,0 +1,4276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Soma.Core</name></assembly>
+<members>
+<member name="T:AssemblyInfo">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.ColumnAttribute.Updatable(System.Boolean)">
+ <summary>Gets and Sets whether the collumn is updatable or not.</summary>
+</member>
+<member name="P:Soma.Core.ColumnAttribute.Name(System.String)">
+ <summary>Gets and Sets the column name.</summary>
+</member>
+<member name="P:Soma.Core.ColumnAttribute.IsEnclosed(System.Boolean)">
+ <summary>Gets and Sets whether names are enclosed or not.</summary>
+</member>
+<member name="P:Soma.Core.ColumnAttribute.Insertable(System.Boolean)">
+ <summary>Gets and Sets whether the collumn is insertable or not.</summary>
+</member>
+<member name="P:Soma.Core.ColumnAttribute.Updatable">
+ <summary>Gets and Sets whether the collumn is updatable or not.</summary>
+</member>
+<member name="P:Soma.Core.ColumnAttribute.Name">
+ <summary>Gets and Sets the column name.</summary>
+</member>
+<member name="P:Soma.Core.ColumnAttribute.IsEnclosed">
+ <summary>Gets and Sets whether names are enclosed or not.</summary>
+</member>
+<member name="P:Soma.Core.ColumnAttribute.Insertable">
+ <summary>Gets and Sets whether the collumn is insertable or not.</summary>
+</member>
+<member name="M:Soma.Core.ColumnAttribute.#ctor">
+ <summary>Initializes a ColumnAttribute instance.</summary>
+</member>
+<member name="T:Soma.Core.ColumnAttribute">
+ <summary>Indicates that a property is mapped to a column.</summary>
+</member>
+<member name="P:Soma.Core.Db.DbConfig">
+ <summary>Gets the databse configuration.</summary>
+</member>
+<member name="M:Soma.Core.Db.Update``1(``0,Soma.Core.UpdateOpt)">
+ <summary>Updates the entity.</summary>
+ <param name="entity">The entity.</param>
+ <param name="opt">The options.</param>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the entity version is different from the expected version.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+ <exception cref="Soma.Core.NoUpdatablePropertyException">Thrown when there is no updatable property.</exception>
+</member>
+<member name="M:Soma.Core.Db.Update``1(``0)">
+ <summary>Updates the entity.</summary>
+ <param name="entity">The entity.</param>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the entity version is different from the expected version.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+ <exception cref="Soma.Core.NoUpdatablePropertyException">Thrown when there is no updatable property.</exception>
+</member>
+<member name="M:Soma.Core.Db.TryFindWithVersion``1(System.Object,System.Object)">
+ <summary>Try to find the entity with the version.</summary>
+ <param name="id">The primary key or the list of primary keys.</param>
+ <param name="version">The expected version.</param>
+ <returns>The found entity or null.</returns>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the found entity version is different from the expected version.</exception>
+</member>
+<member name="M:Soma.Core.Db.TryFind``1(System.Object)">
+ <summary>Try to find the entity.</summary>
+ <param name="id">The primary key or the list of primary keys.</param>
+ <returns>The found entity or null.</returns>
+</member>
+<member name="M:Soma.Core.Db.QueryOnDemand``1(System.String,System.Object)">
+ <summary>Queries the rows on demand.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.Db.QueryOnDemand``1(System.String)">
+ <summary>Queries the rows on demand.</summary>
+ <param name="sql">The SQL.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.Db.Query``1(System.String,System.Object)">
+ <summary>Queries the rows.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The query condition.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.Db.Query``1(System.String)">
+ <summary>Queries the rows.</summary>
+ <param name="sql">The SQL.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.Db.PaginateOnDemand``1(System.String,System.Int64,System.Int64,System.Object)">
+ <summary>Paginates the rows on demand.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.Db.PaginateOnDemand``1(System.String,System.Int64,System.Int64)">
+ <summary>Paginates the rows on demand.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.Db.PaginateAndCount``1(System.String,System.Int64,System.Int64,System.Object)">
+ <summary>Paginates the rows, and counts rows without the offset and the limit.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result list and the count.</returns>
+</member>
+<member name="M:Soma.Core.Db.PaginateAndCount``1(System.String,System.Int64,System.Int64)">
+ <summary>Paginates the rows, and counts rows without the offset and the limit.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <returns>The query result list and the count.</returns>
+</member>
+<member name="M:Soma.Core.Db.Paginate``1(System.String,System.Int64,System.Int64,System.Object)">
+ <summary>Paginates the rows.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.Db.Paginate``1(System.String,System.Int64,System.Int64)">
+ <summary>Paginates the rows.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.Db.Insert``1(``0,Soma.Core.InsertOpt)">
+ <summary>Inserts the entity.</summary>
+ <param name="entity">The entity.</param>
+ <param name="opt">The options.</param>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.NoInsertablePropertyException">Thrown when there is no insertable property.</exception>
+</member>
+<member name="M:Soma.Core.Db.Insert``1(``0)">
+ <summary>Inserts the entity.</summary>
+ <param name="entity">The entity.</param>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.NoInsertablePropertyException">Thrown when there is no insertable property.</exception>
+</member>
+<member name="M:Soma.Core.Db.FindWithVersion``1(System.Object,System.Object)">
+ <summary>Finds the entity with the version.</summary>
+ <param name="id">The primary key or the list of primary keys.</param>
+ <param name="version">The expected version.</param>
+ <returns>The found entity.</returns>
+ <exception cref="Soma.Core.EntityNotFoundException">Thrown when the entity is not found.</exception>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the found entity version is different from the expected version.</exception>
+</member>
+<member name="M:Soma.Core.Db.Find``1(System.Object)">
+ <summary>Finds the entity.</summary>
+ <param name="id">The primary key or the list of primary keys.</param>
+ <returns>The found entity.</returns>
+ <exception cref="Soma.Core.EntityNotFoundException">Thrown when the entity is not found.</exception>
+</member>
+<member name="M:Soma.Core.Db.ExecuteReader``1(System.Func{System.Data.Common.DbDataReader,``0},System.String,System.Object)">
+ <summary>Executes the SQL and handles the reader.</summary>
+ <param name="handler">The reader handler.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The result.</returns>
+</member>
+<member name="M:Soma.Core.Db.ExecuteReader``1(System.Func{System.Data.Common.DbDataReader,``0},System.String)">
+ <summary>Executes the SQL and handles the reader.</summary>
+ <param name="handler">The reader handler.</param>
+ <param name="sql">The SQL.</param>
+ <returns>The result.</returns>
+</member>
+<member name="M:Soma.Core.Db.Execute(System.String,System.Object)">
+ <summary>Executes the arbitrary SQL.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The affected rows.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+</member>
+<member name="M:Soma.Core.Db.Execute(System.String)">
+ <summary>Executes the arbitrary SQL.</summary>
+ <param name="sql">The SQL.</param>
+ <returns>The affected rows.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+</member>
+<member name="M:Soma.Core.Db.Delete``1(``0,Soma.Core.DeleteOpt)">
+ <summary>Deletes the entity.</summary>
+ <param name="entity">The entity.</param>
+ <param name="opt">The options.</param>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the entity version is different from the expected version.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+</member>
+<member name="M:Soma.Core.Db.Delete``1(``0)">
+ <summary>Deletes the entity.</summary>
+ <param name="entity">The entity.</param>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the entity version is different from the expected version.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+</member>
+<member name="M:Soma.Core.Db.Call``1(``0)">
+ <summary>Calls the stored procedure.</summary>
+ <param name="procedure">The stored procedure.</param>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+</member>
+<member name="M:Soma.Core.Db.#ctor(Soma.Core.IDbConfig)">
+ <summary>Initializes a Db instance.</summary>
+ <param name="config">The database configuration.</param>
+</member>
+<member name="T:Soma.Core.Db">
+ <summary>Implements <c>Soma.Core.IDb</c>.</summary>
+ <exception cref="System.ArgumentNullException">Thrown when any arguments are null.</exception>
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.DbConfigBase.SqlParser">
+ <summary>Gets the SQL Parser.</summary>
+ <remarks>Default implementation is CacheSqlParser.</remarks>
+</member>
+<member name="P:Soma.Core.DbConfigBase.SilentLogger">
+ <summary>Gets the silent Logger.</summary>
+</member>
+<member name="P:Soma.Core.DbConfigBase.NoCacheSqlParser">
+ <summary>Gets the cache unenabled SQL Parser.</summary>
+</member>
+<member name="P:Soma.Core.DbConfigBase.NoCacheExpressionParser">
+ <summary>Gets the cache unenabled expression Parser.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.DbConfigBase.Logger">
+ <summary>Gets the SQL Logger.</summary>
+ <remarks>Default implementation is ConsoleLogger.</remarks>
+</member>
+<member name="P:Soma.Core.DbConfigBase.Invariant">
+ <summary>Gets the invariant name of a provider.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.DbConfigBase.ExpressionParser">
+ <summary>Gets the expression Parser.</summary>
+ <remarks>Default implementation is CacheExpressionParser.</remarks>
+</member>
+<member name="P:Soma.Core.DbConfigBase.Dialect">
+ <summary>Gets the SQL dialect.</summary>
+</member>
+<member name="P:Soma.Core.DbConfigBase.DbProviderFactory">
+ <summary>Gets the db provider factory.</summary>
+</member>
+<member name="P:Soma.Core.DbConfigBase.ConsoleLogger">
+ <summary>Gets the console Logger.</summary>
+</member>
+<member name="P:Soma.Core.DbConfigBase.ConnectionString">
+ <summary>Gets the string used to open the connection.</summary>
+</member>
+<member name="P:Soma.Core.DbConfigBase.CacheSqlParser">
+ <summary>Gets the cache enabled SQL Parser.</summary>
+</member>
+<member name="P:Soma.Core.DbConfigBase.CacheExpressionParser">
+ <summary>Gets the cache enabled expression Parser.</summary>
+</member>
+<member name="M:Soma.Core.DbConfigBase.#ctor(System.String)">
+ <summary>Initializes a DbConfigBase instance.</summary>
+ <param name="invariant">The invariant name of a provider.</param>
+</member>
+<member name="T:Soma.Core.DbConfigBase">
+ <summary>Represents a base class of the Soma.Core.IDbConfig.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.DeleteOpt.IgnoreVersion(System.Boolean)">
+ <summary>Gets and Sets whether the version property are ignored.</summary>
+</member>
+<member name="P:Soma.Core.DeleteOpt.IgnoreVersion">
+ <summary>Gets and Sets whether the version property are ignored.</summary>
+</member>
+<member name="M:Soma.Core.DeleteOpt.#ctor">
+ <summary>Initializes a DeleteOpt instance.</summary>
+</member>
+<member name="T:Soma.Core.DeleteOpt">
+ <summary>Represents the options of delete operation.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.DialectBase">
+ <summary>Represents a base class of the Soma.Core.IDialect.</summary>
+</member>
+<member name="F:Soma.Core.Soma.Core.Direction.Result">
+ <summary>The parameter is a result set from an operation such as a stored procedure, built-in function, or user-defined function.</summary>
+ <remarks>
+ The field type must be F# list or System.Collections.Generics.IList.
+ The element type of F# list or System.Collections.Generics.IList must be a type such as a basic type, a record type, a reference type or a tuple type.
+</remarks>
+</member>
+<member name="F:Soma.Core.Soma.Core.Direction.ReturnValue">
+ <summary>The parameter represents a return value from an operation such as a stored procedure, built-in function, or user-defined function.</summary>
+</member>
+<member name="F:Soma.Core.Soma.Core.Direction.Output">
+ <summary>The parameter is an output parameter.</summary>
+</member>
+<member name="F:Soma.Core.Soma.Core.Direction.InputOutput">
+ <summary>The parameter is capable of both input and output.</summary>
+</member>
+<member name="F:Soma.Core.Soma.Core.Direction.Input">
+ <summary>The parameter is an input parameter.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.Direction">
+ <summary>Defines the kinds of stored procedure parameter directions.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.IDb.DbConfig">
+ <summary>Gets the databse configuration.</summary>
+</member>
+<member name="M:Soma.Core.IDb.Update``1(``0,Soma.Core.UpdateOpt)">
+ <summary>Updates the entity.</summary>
+ <param name="entity">The entity.</param>
+ <param name="opt">The options.</param>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the entity version is different from the expected version.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+ <exception cref="Soma.Core.NoUpdatablePropertyException">Thrown when there is no updatable property.</exception>
+</member>
+<member name="M:Soma.Core.IDb.Update``1(``0)">
+ <summary>Updates the entity.</summary>
+ <param name="entity">The entity.</param>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the entity version is different from the expected version.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+ <exception cref="Soma.Core.NoUpdatablePropertyException">Thrown when there is no updatable property.</exception>
+</member>
+<member name="M:Soma.Core.IDb.TryFindWithVersion``1(System.Object,System.Object)">
+ <summary>Try to find the entity with the version.</summary>
+ <param name="id">The primary key or the list of primary keys.</param>
+ <param name="version">The expected version.</param>
+ <returns>The found entity or null.</returns>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the found entity version is different from the expected version.</exception>
+</member>
+<member name="M:Soma.Core.IDb.TryFind``1(System.Object)">
+ <summary>Try to find the entity.</summary>
+ <param name="id">The primary key or the list of primary keys.</param>
+ <returns>The found entity or null.</returns>
+</member>
+<member name="M:Soma.Core.IDb.QueryOnDemand``1(System.String,System.Object)">
+ <summary>Queries the rows on demand.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.IDb.QueryOnDemand``1(System.String)">
+ <summary>Queries the rows on demand.</summary>
+ <param name="sql">The SQL.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.IDb.Query``1(System.String,System.Object)">
+ <summary>Queries the rows.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The query condition.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.IDb.Query``1(System.String)">
+ <summary>Queries the rows.</summary>
+ <param name="sql">The SQL.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.IDb.PaginateOnDemand``1(System.String,System.Int64,System.Int64,System.Object)">
+ <summary>Paginates the rows on demand.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.IDb.PaginateOnDemand``1(System.String,System.Int64,System.Int64)">
+ <summary>Paginates the rows on demand.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.IDb.PaginateAndCount``1(System.String,System.Int64,System.Int64,System.Object)">
+ <summary>Paginates the rows, and counts rows without the offset and the limit.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result list and the count.</returns>
+</member>
+<member name="M:Soma.Core.IDb.PaginateAndCount``1(System.String,System.Int64,System.Int64)">
+ <summary>Paginates the rows, and counts rows without the offset and the limit.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <returns>The query result list and the count.</returns>
+</member>
+<member name="M:Soma.Core.IDb.Paginate``1(System.String,System.Int64,System.Int64,System.Object)">
+ <summary>Paginates the rows.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.IDb.Paginate``1(System.String,System.Int64,System.Int64)">
+ <summary>Paginates the rows.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.IDb.Insert``1(``0,Soma.Core.InsertOpt)">
+ <summary>Inserts the entity.</summary>
+ <param name="entity">The entity.</param>
+ <param name="opt">The options.</param>
+ <returns>The inserted entity.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.NoInsertablePropertyException">Thrown when there is no insertable property.</exception>
+</member>
+<member name="M:Soma.Core.IDb.Insert``1(``0)">
+ <summary>Inserts the entity.</summary>
+ <param name="entity">The entity.</param>
+ <returns>The inserted entity.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.NoInsertablePropertyException">Thrown when there is no insertable property.</exception>
+</member>
+<member name="M:Soma.Core.IDb.FindWithVersion``1(System.Object,System.Object)">
+ <summary>Finds the entity with the version.</summary>
+ <param name="id">The primary key or the list of primary keys.</param>
+ <param name="version">The expected version.</param>
+ <returns>The found entity.</returns>
+ <exception cref="Soma.Core.EntityNotFoundException">Thrown when the entity is not found.</exception>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the found entity version is different from the expected version.</exception>
+</member>
+<member name="M:Soma.Core.IDb.Find``1(System.Object)">
+ <summary>Finds the entity.</summary>
+ <param name="id">The primary key or the list of primary keys.</param>
+ <returns>The found entity.</returns>
+ <exception cref="Soma.Core.EntityNotFoundException">Thrown when the entity is not found.</exception>
+</member>
+<member name="M:Soma.Core.IDb.ExecuteReader``1(System.Func{System.Data.Common.DbDataReader,``0},System.String,System.Object)">
+ <summary>Executes the SQL and handles the reader.</summary>
+ <param name="handler">The reader handler.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The result.</returns>
+</member>
+<member name="M:Soma.Core.IDb.ExecuteReader``1(System.Func{System.Data.Common.DbDataReader,``0},System.String)">
+ <summary>Executes the SQL and handles the reader.</summary>
+ <param name="handler">The reader handler.</param>
+ <param name="sql">The SQL.</param>
+ <returns>The result.</returns>
+</member>
+<member name="M:Soma.Core.IDb.Execute(System.String,System.Object)">
+ <summary>Executes the arbitrary SQL.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The affected rows.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+</member>
+<member name="M:Soma.Core.IDb.Execute(System.String)">
+ <summary>Executes the arbitrary SQL.</summary>
+ <param name="sql">The SQL.</param>
+ <returns>The affected rows.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+</member>
+<member name="M:Soma.Core.IDb.Delete``1(``0,Soma.Core.DeleteOpt)">
+ <summary>Deletes the entity.</summary>
+ <param name="entity">The entity.</param>
+ <param name="opt">The options.</param>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the entity version is different from the expected version.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+</member>
+<member name="M:Soma.Core.IDb.Delete``1(``0)">
+ <summary>Deletes the entity.</summary>
+ <param name="entity">The entity.</param>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the entity version is different from the expected version.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+</member>
+<member name="M:Soma.Core.IDb.Call``1(``0)">
+ <summary>Calls the stored procedure.</summary>
+ <param name="procedure">The stored procedure.</param>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+</member>
+<member name="T:Soma.Core.IDb">
+ <summary>Represents operations on the Database.</summary>
+ <exception cref="System.ArgumentNullException">Thrown when any arguments are null.</exception>
+</member>
+<member name="P:Soma.Core.IDbConfig.SqlParser">
+ <summary>Gets the SQL Parser.</summary>
+</member>
+<member name="P:Soma.Core.IDbConfig.Logger">
+ <summary>Gets the SQL Logger.</summary>
+</member>
+<member name="P:Soma.Core.IDbConfig.Invariant">
+ <summary>Gets the invariant name of a provider.</summary>
+</member>
+<member name="P:Soma.Core.IDbConfig.ExpressionParser">
+ <summary>Gets the expression Parser.</summary>
+</member>
+<member name="P:Soma.Core.IDbConfig.Dialect">
+ <summary>Gets the SQL dialect.</summary>
+</member>
+<member name="P:Soma.Core.IDbConfig.DbProviderFactory">
+ <summary>Gets the db provider factory.</summary>
+</member>
+<member name="P:Soma.Core.IDbConfig.ConnectionString">
+ <summary>Gets the string used to open the connection.</summary>
+</member>
+<member name="T:Soma.Core.IDbConfig">
+ <summary>Represents a database configuration.</summary>
+</member>
+<member name="P:Soma.Core.IDialect.RootExprCtxt">
+ <summary>Gets a root expression context.</summary>
+</member>
+<member name="P:Soma.Core.IDialect.IsResultParamRecognizedAsOutputParam">
+ <summary>Gets a value indicating whether a result parameter is recognized as an output parameter.</summary>
+</member>
+<member name="P:Soma.Core.IDialect.IsHasRowsPropertySupported">
+ <summary>Gets a value indicating whether the System.Data.Common.DbDataReader.HasRows Property is supported.</summary>
+</member>
+<member name="P:Soma.Core.IDialect.CanGetVersionAtOnce">
+ <summary>Gets a value indicating whether the insert and the version getting can be done at once.</summary>
+</member>
+<member name="P:Soma.Core.IDialect.CanGetIdentityAtOnce">
+ <summary>Gets a value indicating whether the insert and the identity getting can be done at once.</summary>
+</member>
+<member name="P:Soma.Core.IDialect.CanGetIdentityAndVersionAtOnce">
+ <summary>Gets a value indicating whether the insert and the identity and version getting can be done at once.</summary>
+</member>
+<member name="M:Soma.Core.IDialect.SetupDbParameter(Soma.Core.PreparedParameter,System.Data.Common.DbParameter)">
+ <summary>Setups the <c>System.Data.Common.DbParameter</c>.</summary>
+ <param name="param">The Soma SQL parameter.</param>
+ <param name="param">The ADO.NET DB parameter.</param>
+</member>
+<member name="M:Soma.Core.IDialect.RewriteForPagination(Soma.Core.SqlAst.Statement,System.String,System.Collections.Generic.IDictionary{System.String,System.Tuple`2{System.Object,System.Type}},System.Int64,System.Int64)">
+ <summary>Rewrites the SQL for pagination.</summary>
+ <param name="statement">The SQL statement.</param>
+ <param name="sql">The SQL.</param>  
+ <param name="condition">The condition.</param>
+ <param name="offset">The offset.</param>
+ <param name="limit">The limit.</param>
+ <returns>The rewrote SQL and condition.</returns>
+</member>
+<member name="M:Soma.Core.IDialect.RewriteForCount(Soma.Core.SqlAst.Statement,System.String,System.Collections.Generic.IDictionary{System.String,System.Tuple`2{System.Object,System.Type}})">
+ <summary>Rewrites the SQL for counting.</summary>
+ <param name="statement">The SQL statement.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The rewrote SQL and condition.</returns>
+</member>
+<member name="M:Soma.Core.IDialect.RewriteForCalcPagination(Soma.Core.SqlAst.Statement,System.String,System.Collections.Generic.IDictionary{System.String,System.Tuple`2{System.Object,System.Type}},System.Int64,System.Int64)">
+ <summary>Rewrites the SQL for pagination with the count calculation.</summary>
+ <param name="statement">The SQL statement.</param>  
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <param name="offset">The offset.</param>
+ <param name="limit">The limit.</param>
+ <returns>The rewrote SQL and condition.</returns>
+</member>
+<member name="M:Soma.Core.IDialect.PrepareVersionSelect(System.String,System.String,Microsoft.FSharp.Collections.FSharpList{System.Tuple`3{System.String,System.Object,System.Type}})">
+ <summary>Prepares the version select SQL statement.</summary>
+ <param name="tableName">The table name.</param>
+ <param name="versionColumnName">The version column name.</param>
+ <param name="idMetaList">The list of primary key metadata.</param>
+ <returns>The SQL statement.</returns>
+</member>
+<member name="M:Soma.Core.IDialect.PrepareSequenceSelect(System.String)">
+ <summary>Prepares the sequence select SQL statement.</summary>
+ <param name="sequenceName">The sequence name.</param>
+ <returns>The SQL statement.</returns>
+</member>
+<member name="M:Soma.Core.IDialect.PrepareIdentitySelect(System.String,System.String)">
+ <summary>Prepares the identity select SQL statement.</summary>
+ <param name="tableName">The table name.</param>
+ <param name="idColumnName">The identity column name.</param>
+ <returns>The SQL statement.</returns>
+</member>
+<member name="M:Soma.Core.IDialect.PrepareIdentityAndVersionSelect(System.String,System.String,System.String)">
+ <summary>Prepares the identity and version select SQL statement.</summary>
+ <param name="tableName">The table name.</param>
+ <param name="idColumnName">The identity column name.</param>
+ <param name="versionColumnName">The version column name.</param>
+ <returns>The SQL statement.</returns>
+</member>
+<member name="M:Soma.Core.IDialect.IsUniqueConstraintViolation(System.Exception)">
+ <summary>Gets a value indicating whether the exception represents the unique constraint violation.</summary>
+</member>
+<member name="M:Soma.Core.IDialect.FormatAsSqlLiteral(System.Object,System.Type,System.Data.DbType)">
+ <summary>Formats the value as the SQL literal.</summary>
+ <param name="dbValue">The DB value.</param>
+ <param name="clrValue">The CLR type.</param>
+ <param name="dbType">The DB type.</param>
+ <returns>The converted value, the underlying CLR type and the DB type.</returns>
+</member>
+<member name="M:Soma.Core.IDialect.EscapeMetaChars(System.String)">
+ <summary>Escapes meta characters.</summary>
+ <param name="text">The text.</param>
+ <returns>The escaped text.</returns>
+</member>
+<member name="M:Soma.Core.IDialect.EncloseIdentifier(System.String)">
+ <summary>Encloses the identifier.</summary>
+ <returns>The enclosed identifier.</returns>
+</member>
+<member name="M:Soma.Core.IDialect.CreateParameterName(System.String)">
+ <summary>Create the parameter name.</summary>
+ <param name="baseName">The base name.</param>
+ <returns>The parameter name.</returns>
+</member>
+<member name="M:Soma.Core.IDialect.CreateParameterName(System.Int32)">
+ <summary>Create the parameter name.</summary>
+ <param name="index">The index.</param>
+ <returns>The parameter name.</returns>
+</member>
+<member name="M:Soma.Core.IDialect.ConvertFromDbToClr(System.Object,System.Type)">
+ <summary>Converts the value from the DB to the CLR.</summary>
+ <param name="dbValue">The DB value.</param>
+ <param name="destType">The destination CLR type.</param>
+ <returns>The converted value.</returns>
+</member>
+<member name="M:Soma.Core.IDialect.ConvertFromClrToDb(System.Object,System.Type)">
+ <summary>Converts the value from the CLR to the DB.</summary>
+ <param name="clrValue">The CLR value.</param>
+ <param name="srcType">The source CLR type.</param>
+ <returns>The converted value, the underlying CLR type and the DB type.</returns>
+</member>
+<member name="M:Soma.Core.IDialect.BuildProcedureCallSql(System.String,System.Collections.Generic.IEnumerable{Soma.Core.PreparedParameter})">
+ <summary>Builds the stored procedure call SQL.</summary>
+ <param name="procedureName">The stored procedure name.</param>
+ <param name="parameters">SQL parameters.</param>
+ <returns>The built SQL.</returns>
+</member>
+<member name="T:Soma.Core.IDialect">
+ <summary>Represents a SQL dialect.</summary>
+</member>
+<member name="P:Soma.Core.IDynamicObject.Dialect">
+ <summary>Gets the SQL dialect.</summary>
+</member>
+<member name="M:Soma.Core.IDynamicObject.GetCaseSensitiveDict">
+ <summary>Gets the dictionary whose keys are represented in case sensitive.</summary>
+ <returns>The dictionary which contains member name / member value pairs.</returns>
+</member>
+<member name="T:Soma.Core.IDynamicObject">
+ <summary>Represents a dynamic object.</summary>
+ <remarks>This interface handles dynamic members in case insensitive.</remarks>
+</member>
+<member name="P:Soma.Core.ILocalDb.DbConfig">
+ <summary>Gets the databse configuration.</summary>
+</member>
+<member name="M:Soma.Core.ILocalDb.Update``1(System.Data.Common.DbConnection,``0,Soma.Core.UpdateOpt)">
+ <summary>Updates the entity.</summary>
+ <param name="connection">The connection.</param>
+ <param name="entity">The entity.</param>
+ <param name="opt">The options.</param>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the entity version is different from the expected version.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+ <exception cref="Soma.Core.NoUpdatablePropertyException">Thrown when there is no updatable property.</exception>
+</member>
+<member name="M:Soma.Core.ILocalDb.Update``1(System.Data.Common.DbConnection,``0)">
+ <summary>Updates the entity.</summary>
+ <param name="connection">The connection.</param>
+ <param name="entity">The entity.</param>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the entity version is different from the expected version.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+ <exception cref="Soma.Core.NoUpdatablePropertyException">Thrown when there is no updatable property.</exception>
+</member>
+<member name="M:Soma.Core.ILocalDb.TryFindWithVersion``1(System.Data.Common.DbConnection,System.Object,System.Object)">
+ <summary>Try to find the entity with the version.</summary>
+ <param name="connection">The connection.</param>
+ <param name="id">The primary key or the list of primary keys.</param>
+ <param name="version">The expected version.</param>
+ <returns>The found entity or null.</returns>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the found entity version is different from the expected version.</exception>
+</member>
+<member name="M:Soma.Core.ILocalDb.TryFind``1(System.Data.Common.DbConnection,System.Object)">
+ <summary>Try to find the entity.</summary>
+ <param name="connection">The connection.</param>
+ <param name="id">The primary key or the list of primary keys.</param>
+ <returns>The found entity or null.</returns>
+</member>
+<member name="M:Soma.Core.ILocalDb.QueryOnDemand``1(System.Data.Common.DbConnection,System.String,System.Object)">
+ <summary>Queries the rows on demand.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.ILocalDb.QueryOnDemand``1(System.Data.Common.DbConnection,System.String)">
+ <summary>Queries the rows on demand.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.ILocalDb.Query``1(System.Data.Common.DbConnection,System.String,System.Object)">
+ <summary>Queries the rows.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The query condition.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.ILocalDb.Query``1(System.Data.Common.DbConnection,System.String)">
+ <summary>Queries the rows.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.ILocalDb.PaginateOnDemand``1(System.Data.Common.DbConnection,System.String,System.Int64,System.Int64,System.Object)">
+ <summary>Paginates the rows on demand.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.ILocalDb.PaginateOnDemand``1(System.Data.Common.DbConnection,System.String,System.Int64,System.Int64)">
+ <summary>Paginates the rows on demand.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.ILocalDb.PaginateAndCount``1(System.Data.Common.DbConnection,System.String,System.Int64,System.Int64,System.Object)">
+ <summary>Paginates the rows, and counts rows without the offset and the limit.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result list and the count.</returns>
+</member>
+<member name="M:Soma.Core.ILocalDb.PaginateAndCount``1(System.Data.Common.DbConnection,System.String,System.Int64,System.Int64)">
+ <summary>Paginates the rows, and counts rows without the offset and the limit.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <returns>The query result list and the count.</returns>
+</member>
+<member name="M:Soma.Core.ILocalDb.Paginate``1(System.Data.Common.DbConnection,System.String,System.Int64,System.Int64,System.Object)">
+ <summary>Paginates the rows.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.ILocalDb.Paginate``1(System.Data.Common.DbConnection,System.String,System.Int64,System.Int64)">
+ <summary>Paginates the rows.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.ILocalDb.Insert``1(System.Data.Common.DbConnection,``0,Soma.Core.InsertOpt)">
+ <summary>Inserts the entity.</summary>
+ <param name="connection">The connection.</param>
+ <param name="entity">The entity.</param>
+ <param name="opt">The options.</param>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.NoInsertablePropertyException">Thrown when there is no insertable property.</exception>
+</member>
+<member name="M:Soma.Core.ILocalDb.Insert``1(System.Data.Common.DbConnection,``0)">
+ <summary>Inserts the entity.</summary>
+ <param name="connection">The connection.</param>
+ <param name="entity">The entity.</param>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.NoInsertablePropertyException">Thrown when there is no insertable property.</exception>
+</member>
+<member name="M:Soma.Core.ILocalDb.FindWithVersion``1(System.Data.Common.DbConnection,System.Object,System.Object)">
+ <summary>Finds the entity with the version.</summary>
+ <param name="connection">The connection.</param>
+ <param name="id">The primary key or the list of primary keys.</param>
+ <param name="version">The expected version.</param>
+ <returns>The found entity.</returns>
+ <exception cref="Soma.Core.EntityNotFoundException">Thrown when the entity is not found.</exception>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the found entity version is different from the expected version.</exception>
+</member>
+<member name="M:Soma.Core.ILocalDb.Find``1(System.Data.Common.DbConnection,System.Object)">
+ <summary>Finds the entity.</summary>
+ <param name="connection">The connection.</param>
+ <param name="id">The primary key or the list of primary keys.</param>
+ <returns>The found entity.</returns>
+ <exception cref="Soma.Core.EntityNotFoundException">Thrown when the entity is not found.</exception>
+</member>
+<member name="M:Soma.Core.ILocalDb.ExecuteReader``1(System.Data.Common.DbConnection,System.Func{System.Data.Common.DbDataReader,``0},System.String,System.Object)">
+ <summary>Executes the SQL and handles the reader.</summary>
+ <param name="handler">The reader handler.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The result.</returns>
+</member>
+<member name="M:Soma.Core.ILocalDb.ExecuteReader``1(System.Data.Common.DbConnection,System.Func{System.Data.Common.DbDataReader,``0},System.String)">
+ <summary>Executes the SQL and handles the reader.</summary>
+ <param name="handler">The reader handler.</param>
+ <param name="sql">The SQL.</param>
+ <returns>The result.</returns>
+</member>
+<member name="M:Soma.Core.ILocalDb.Execute(System.Data.Common.DbConnection,System.String,System.Object)">
+ <summary>Executes the arbitrary SQL.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The affected rows.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+</member>
+<member name="M:Soma.Core.ILocalDb.Execute(System.Data.Common.DbConnection,System.String)">
+ <summary>Executes the arbitrary SQL.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <returns>The affected rows.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+</member>
+<member name="M:Soma.Core.ILocalDb.Delete``1(System.Data.Common.DbConnection,``0,Soma.Core.DeleteOpt)">
+ <summary>Deletes the entity.</summary>
+ <param name="connection">The connection.</param>
+ <param name="entity">The entity.</param>
+ <param name="opt">The options.</param>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the entity version is different from the expected version.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+</member>
+<member name="M:Soma.Core.ILocalDb.Delete``1(System.Data.Common.DbConnection,``0)">
+ <summary>Deletes the entity.</summary>
+ <param name="connection">The connection.</param>
+ <param name="entity">The entity.</param>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the entity version is different from the expected version.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+</member>
+<member name="M:Soma.Core.ILocalDb.CreateConnection">
+ <summary>Creates the connection.</summary>
+ <returns>The connection.</returns>
+</member>
+<member name="M:Soma.Core.ILocalDb.Call``1(System.Data.Common.DbConnection,``0)">
+ <summary>Calls the stored procedure.</summary>
+ <param name="connection">The connection.</param>
+ <param name="procedure">The stored procedure.</param>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+</member>
+<member name="T:Soma.Core.ILocalDb">
+ <summary>Represents operations on the local Database.</summary>
+ <exception cref="System.ArgumentNullException">Thrown when any arguments are null.</exception>
+</member>
+<member name="P:Soma.Core.IdAttribute.Kind">
+ <summary>The kind of primary key.</summary>
+</member>
+<member name="M:Soma.Core.IdAttribute.#ctor(Soma.Core.IdKind)">
+ <summary>Initializes a IdAttribute instance with the IdKind.</summary>
+</member>
+<member name="M:Soma.Core.IdAttribute.#ctor">
+ <summary>Initializes a IdAttribute instance.</summary>
+</member>
+<member name="T:Soma.Core.IdAttribute">
+ <summary>Indicates that a property is mapped to a primary key column.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:Soma.Core.Soma.Core.IdKind.Sequence">
+ <summary>The primary key is assigned by the database sequence feature.</summary>
+</member>
+<member name="F:Soma.Core.Soma.Core.IdKind.Identity">
+ <summary>The primary key is assigned by the database identity feature.</summary>
+</member>
+<member name="F:Soma.Core.Soma.Core.IdKind.Assigned">
+ <summary>The primary key is assigned by the application.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.IdKind">
+ <summary>Defines the kinds of primary key columns.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.InsertOpt.Include(System.Collections.Generic.IEnumerable{System.String})">
+ <summary>Gets and Sets property names that should be included.</summary>
+</member>
+<member name="P:Soma.Core.InsertOpt.ExcludeNull(System.Boolean)">
+ <summary>Gets and Sets whether null properties are excluded.</summary>
+</member>
+<member name="P:Soma.Core.InsertOpt.Exclude(System.Collections.Generic.IEnumerable{System.String})">
+ <summary>Gets and Sets property names that should be excluded.</summary>
+</member>
+<member name="P:Soma.Core.InsertOpt.Include">
+ <summary>Gets and Sets property names that should be included.</summary>
+</member>
+<member name="P:Soma.Core.InsertOpt.ExcludeNull">
+ <summary>Gets and Sets whether null properties are excluded.</summary>
+</member>
+<member name="P:Soma.Core.InsertOpt.Exclude">
+ <summary>Gets and Sets property names that should be excluded.</summary>
+</member>
+<member name="M:Soma.Core.InsertOpt.#ctor">
+ <summary>Initializes a InsertOpt instance.</summary>
+</member>
+<member name="T:Soma.Core.InsertOpt">
+ <summary>Represents the options of insert operation.</summary>
+</member>
+<member name="P:Soma.Core.LocalDb.DbConfig">
+ <summary>Gets the databse configuration.</summary>
+</member>
+<member name="M:Soma.Core.LocalDb.Update``1(System.Data.Common.DbConnection,``0,Soma.Core.UpdateOpt)">
+ <summary>Updates the entity.</summary>
+ <param name="connection">The connection.</param>
+ <param name="entity">The entity.</param>
+ <param name="opt">The options.</param>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the entity version is different from the expected version.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+ <exception cref="Soma.Core.NoUpdatablePropertyException">Thrown when there is no updatable property.</exception>
+</member>
+<member name="M:Soma.Core.LocalDb.Update``1(System.Data.Common.DbConnection,``0)">
+ <summary>Updates the entity.</summary>
+ <param name="connection">The connection.</param>
+ <param name="entity">The entity.</param>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the entity version is different from the expected version.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+ <exception cref="Soma.Core.NoUpdatablePropertyException">Thrown when there is no updatable property.</exception>
+</member>
+<member name="M:Soma.Core.LocalDb.TryFindWithVersion``1(System.Data.Common.DbConnection,System.Object,System.Object)">
+ <summary>Try to find the entity with the version.</summary>
+ <param name="connection">The connection.</param>
+ <param name="id">The primary key or the list of primary keys.</param>
+ <param name="version">The expected version.</param>
+ <returns>The found entity or null.</returns>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the found entity version is different from the expected version.</exception>
+</member>
+<member name="M:Soma.Core.LocalDb.TryFind``1(System.Data.Common.DbConnection,System.Object)">
+ <summary>Try to find the entity.</summary>
+ <param name="connection">The connection.</param>
+ <param name="id">The primary key or the list of primary keys.</param>
+ <returns>The found entity or null.</returns>
+</member>
+<member name="M:Soma.Core.LocalDb.QueryOnDemand``1(System.Data.Common.DbConnection,System.String,System.Object)">
+ <summary>Queries the rows on demand.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.LocalDb.QueryOnDemand``1(System.Data.Common.DbConnection,System.String)">
+ <summary>Queries the rows on demand.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.LocalDb.Query``1(System.Data.Common.DbConnection,System.String,System.Object)">
+ <summary>Queries the rows.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The query condition.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.LocalDb.Query``1(System.Data.Common.DbConnection,System.String)">
+ <summary>Queries the rows.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.LocalDb.PaginateOnDemand``1(System.Data.Common.DbConnection,System.String,System.Int64,System.Int64,System.Object)">
+ <summary>Paginates the rows on demand.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.LocalDb.PaginateOnDemand``1(System.Data.Common.DbConnection,System.String,System.Int64,System.Int64)">
+ <summary>Paginates the rows on demand.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.LocalDb.PaginateAndCount``1(System.Data.Common.DbConnection,System.String,System.Int64,System.Int64,System.Object)">
+ <summary>Paginates the rows, and counts rows without the offset and the limit.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result list and the count.</returns>
+</member>
+<member name="M:Soma.Core.LocalDb.PaginateAndCount``1(System.Data.Common.DbConnection,System.String,System.Int64,System.Int64)">
+ <summary>Paginates the rows, and counts rows without the offset and the limit.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <returns>The query result list and the count.</returns>
+</member>
+<member name="M:Soma.Core.LocalDb.Paginate``1(System.Data.Common.DbConnection,System.String,System.Int64,System.Int64,System.Object)">
+ <summary>Paginates the rows.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.LocalDb.Paginate``1(System.Data.Common.DbConnection,System.String,System.Int64,System.Int64)">
+ <summary>Paginates the rows.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.LocalDb.Insert``1(System.Data.Common.DbConnection,``0,Soma.Core.InsertOpt)">
+ <summary>Inserts the entity.</summary>
+ <param name="connection">The connection.</param>
+ <param name="entity">The entity.</param>
+ <param name="opt">The options.</param>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.NoInsertablePropertyException">Thrown when there is no insertable property.</exception>
+</member>
+<member name="M:Soma.Core.LocalDb.Insert``1(System.Data.Common.DbConnection,``0)">
+ <summary>Inserts the entity.</summary>
+ <param name="connection">The connection.</param>
+ <param name="entity">The entity.</param>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.NoInsertablePropertyException">Thrown when there is no insertable property.</exception>
+</member>
+<member name="M:Soma.Core.LocalDb.FindWithVersion``1(System.Data.Common.DbConnection,System.Object,System.Object)">
+ <summary>Finds the entity with the version.</summary>
+ <param name="connection">The connection.</param>
+ <param name="id">The primary key or the list of primary keys.</param>
+ <param name="version">The expected version.</param>
+ <returns>The found entity.</returns>
+ <exception cref="Soma.Core.EntityNotFoundException">Thrown when the entity is not found.</exception>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the found entity version is different from the expected version.</exception>
+</member>
+<member name="M:Soma.Core.LocalDb.Find``1(System.Data.Common.DbConnection,System.Object)">
+ <summary>Finds the entity.</summary>
+ <param name="connection">The connection.</param>
+ <param name="id">The primary key or the list of primary keys.</param>
+ <returns>The found entity.</returns>
+ <exception cref="Soma.Core.EntityNotFoundException">Thrown when the entity is not found.</exception>
+</member>
+<member name="M:Soma.Core.LocalDb.ExecuteReader``1(System.Data.Common.DbConnection,System.Func{System.Data.Common.DbDataReader,``0},System.String,System.Object)">
+ <summary>Executes the SQL and handles the reader.</summary>
+ <param name="handler">The reader handler.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The result.</returns>
+</member>
+<member name="M:Soma.Core.LocalDb.ExecuteReader``1(System.Data.Common.DbConnection,System.Func{System.Data.Common.DbDataReader,``0},System.String)">
+ <summary>Executes the SQL and handles the reader.</summary>
+ <param name="handler">The reader handler.</param>
+ <param name="sql">The SQL.</param>
+ <returns>The result.</returns>
+</member>
+<member name="M:Soma.Core.LocalDb.Execute(System.Data.Common.DbConnection,System.String,System.Object)">
+ <summary>Executes the arbitrary SQL.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The affected rows.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+</member>
+<member name="M:Soma.Core.LocalDb.Execute(System.Data.Common.DbConnection,System.String)">
+ <summary>Executes the arbitrary SQL.</summary>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <returns>The affected rows.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+</member>
+<member name="M:Soma.Core.LocalDb.Delete``1(System.Data.Common.DbConnection,``0,Soma.Core.DeleteOpt)">
+ <summary>Deletes the entity.</summary>
+ <param name="connection">The connection.</param>
+ <param name="entity">The entity.</param>
+ <param name="opt">The options.</param>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the entity version is different from the expected version.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+</member>
+<member name="M:Soma.Core.LocalDb.Delete``1(System.Data.Common.DbConnection,``0)">
+ <summary>Deletes the entity.</summary>
+ <param name="connection">The connection.</param>
+ <param name="entity">The entity.</param>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the entity version is different from the expected version.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+</member>
+<member name="M:Soma.Core.LocalDb.CreateConnection">
+ <summary>Creates the connection.</summary>
+ <returns>The connection.</returns>
+</member>
+<member name="M:Soma.Core.LocalDb.Call``1(System.Data.Common.DbConnection,``0)">
+ <summary>Calls the stored procedure.</summary>
+ <param name="connection">The connection.</param>
+ <param name="procedure">The stored procedure.</param>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+</member>
+<member name="M:Soma.Core.LocalDb.#ctor(Soma.Core.IDbConfig)">
+ <summary>Initializes a Db instance.</summary>
+ <param name="config">The database configuration.</param>
+</member>
+<member name="T:Soma.Core.LocalDb">
+ <summary>Implements <c>Soma.Core.ILocalDb</c>.</summary>
+ <exception cref="System.ArgumentNullException">Thrown when any arguments are null.</exception>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.MsSqlCeConfig.Dialect">
+ <summary>Gets the SQL dialect.</summary>
+</member>
+<member name="M:Soma.Core.MsSqlCeConfig.#ctor">
+ <summary>Initializes a MsSqlCeConfig instance.</summary>
+</member>
+<member name="T:Soma.Core.MsSqlCeConfig">
+ <summary>Represents a database configuration of Microsoft SQL Server Compact 4.0.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.MsSqlCeDialect">
+ <summary>Represents a SQL dialect of Microsoft SQL Server Compact 4.0.</summary>
+</member>
+<member name="P:Soma.Core.MsSqlConfig.Dialect">
+ <summary>Gets the SQL dialect.</summary>
+</member>
+<member name="M:Soma.Core.MsSqlConfig.#ctor">
+ <summary>Initializes a MsSqlConfig instance.</summary>
+</member>
+<member name="T:Soma.Core.MsSqlConfig">
+ <summary>Represents a database configuration of Microsoft SQL Server 2008.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.MsSqlDialect">
+ <summary>Represents a SQL dialect of Microsoft SQL Server 2008.</summary>
+</member>
+<member name="P:Soma.Core.MySqlConfig.Dialect">
+ <summary>Gets the SQL dialect.</summary>
+</member>
+<member name="M:Soma.Core.MySqlConfig.#ctor">
+ <summary>Initializes a MySqlConfig instance.</summary>
+</member>
+<member name="T:Soma.Core.MySqlConfig">
+ <summary>Represents a database configuration of MySQL 5.x.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.MySqlDialect">
+ <summary>Represents a SQL dialect of MySQL 5.x.</summary>
+</member>
+<member name="P:Soma.Core.OracleConfig.Dialect">
+ <summary>Gets the SQL dialect.</summary>
+</member>
+<member name="M:Soma.Core.OracleConfig.#ctor">
+ <summary>Initializes a OracleConfig instance.</summary>
+</member>
+<member name="T:Soma.Core.OracleConfig">
+ <summary>Represents a database configuration of Oracle Database 11g.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.OracleDialect">
+ <summary>Represents a SQL dialect of Oracle Database 11g.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.PlainConfig.Logger">
+ <summary>Gets the SQL logger.</summary>
+</member>
+<member name="P:Soma.Core.PlainConfig.Dialect">
+ <summary>Gets the SQL dialect.</summary>
+</member>
+<member name="P:Soma.Core.PlainConfig.ConnectionString">
+ <summary>Gets the connection string.</summary>
+</member>
+<member name="M:Soma.Core.PlainConfig.SetLogger(System.Action{Soma.Core.PreparedStatement})">
+ <summary>Sets the SQL logger.</summary>
+</member>
+<member name="M:Soma.Core.PlainConfig.#ctor(System.String,System.String,Soma.Core.IDialect)">
+ <summary>Initializes a PlainConfig instance.</summary>
+ <param name="invariant">The invariant.</param>
+ <param name="connectionString">The connection string.</param>
+ <param name="dialect">The SQL dialect.</param>
+</member>
+<member name="T:Soma.Core.PlainConfig">
+ <summary>Represents a plain database configuration.</summary>
+</member>
+<member name="P:Soma.Core.PlainDb.DbConfig">
+ <summary>Gets the databse configuration.</summary>
+</member>
+<member name="M:Soma.Core.PlainDb.QueryOnDemand(System.String,System.Collections.IDictionary)">
+ <summary>Queries the rows on demand.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.PlainDb.QueryOnDemand(System.String)">
+ <summary>Queries the rows on demand.</summary>
+ <param name="sql">The SQL.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.PlainDb.Query(System.String,System.Collections.IDictionary)">
+ <summary>Queries the rows.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.PlainDb.Query(System.String)">
+ <summary>Queries the rows.</summary>
+ <param name="sql">The SQL.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.PlainDb.PaginateOnDemand(System.String,System.Int64,System.Int64,System.Collections.IDictionary)">
+ <summary>Paginates the rows on demand.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.PlainDb.PaginateOnDemand(System.String,System.Int64,System.Int64)">
+ <summary>Paginates the rows on demand.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.PlainDb.PaginateAndCount(System.String,System.Int64,System.Int64,System.Collections.IDictionary)">
+ <summary>Paginates the rows, and counts rows without the offset and the limit.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result list and the count.</returns>
+</member>
+<member name="M:Soma.Core.PlainDb.PaginateAndCount(System.String,System.Int64,System.Int64)">
+ <summary>Paginates the rows, and counts rows without the offset and the limit.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <returns>The query result list and the count.</returns>
+</member>
+<member name="M:Soma.Core.PlainDb.Paginate(System.String,System.Int64,System.Int64,System.Collections.IDictionary)">
+ <summary>Paginates the rows.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.PlainDb.Paginate(System.String,System.Int64,System.Int64)">
+ <summary>Paginates the rows.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="offset">The offset. Nagative value means zero.</param>
+ <param name="limit">The max row count. Negative value means infinite.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.PlainDb.Execute(System.String,System.Collections.IDictionary)">
+ <summary>Executes the arbitrary SQL.</summary>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The affected rows.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+</member>
+<member name="M:Soma.Core.PlainDb.Execute(System.String)">
+ <summary>Executes the arbitrary SQL.</summary>
+ <param name="sql">The SQL.</param>
+ <returns>The affected rows.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+</member>
+<member name="M:Soma.Core.PlainDb.#ctor(Soma.Core.IDbConfig)">
+ <summary>Initializes a Db instance.</summary>
+ <param name="config">The database configuration.</param>
+</member>
+<member name="T:Soma.Core.PlainDb">
+ <summary>Represents plain Database.</summary>
+ <exception cref="System.ArgumentNullException">Thrown when any arguments are null.</exception>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="F:Soma.Core.Soma.Core.PreparedParameter.Scale">
+ <summary>Gets the parameter scale.</summary>
+</member>
+<member name="F:Soma.Core.Soma.Core.PreparedParameter.Precision">
+ <summary>Gets the parameter precision.</summary>
+</member>
+<member name="F:Soma.Core.Soma.Core.PreparedParameter.Size">
+ <summary>Gets the parameter size.</summary>
+</member>
+<member name="F:Soma.Core.Soma.Core.PreparedParameter.Direction">
+ <summary>Gets the parameter direction.</summary>
+</member>
+<member name="F:Soma.Core.Soma.Core.PreparedParameter.DbType">
+ <summary>Gets the parameter DB type.</summary>
+</member>
+<member name="F:Soma.Core.Soma.Core.PreparedParameter.Type">
+ <summary>Gets the parameter CLR type.</summary>
+</member>
+<member name="F:Soma.Core.Soma.Core.PreparedParameter.Value">
+ <summary>Gets the parameter value.</summary>
+</member>
+<member name="F:Soma.Core.Soma.Core.PreparedParameter.Name">
+ <summary>Gets the parameter name.</summary>
+</member>
+<member name="T:Soma.Core.PreparedParameter">
+ <summary>Represents a SQL parameter.</summary>
+</member>
+<member name="F:Soma.Core.Soma.Core.PreparedStatement.Parameters">
+ <summary>Gets parameters.</summary>
+</member>
+<member name="F:Soma.Core.Soma.Core.PreparedStatement.FormattedText">
+ <summary>Gets the formatted SQL.</summary>
+</member>
+<member name="F:Soma.Core.Soma.Core.PreparedStatement.Text">
+ <summary>Gets the SQL.</summary>
+</member>
+<member name="T:Soma.Core.PreparedStatement">
+ <summary>Represents a SQL statement.</summary>
+</member>
+<member name="P:Soma.Core.ProcedureAttribute.Schema(System.String)">
+ <summary>Gets and Sets the schema name.</summary>
+</member>
+<member name="P:Soma.Core.ProcedureAttribute.Name(System.String)">
+ <summary>Gets and Sets the stored procedure name.</summary>
+</member>
+<member name="P:Soma.Core.ProcedureAttribute.IsEnclosed(System.Boolean)">
+ <summary>Gets and Sets whether names are enclosed or not.</summary>
+</member>
+<member name="P:Soma.Core.ProcedureAttribute.Catalog(System.String)">
+ <summary>Gets and Sets the catalog name.</summary>
+</member>
+<member name="P:Soma.Core.ProcedureAttribute.Schema">
+ <summary>Gets and Sets the schema name.</summary>
+</member>
+<member name="P:Soma.Core.ProcedureAttribute.Name">
+ <summary>Gets and Sets the stored procedure name.</summary>
+</member>
+<member name="P:Soma.Core.ProcedureAttribute.IsEnclosed">
+ <summary>Gets and Sets whether names are enclosed or not.</summary>
+</member>
+<member name="P:Soma.Core.ProcedureAttribute.Catalog">
+ <summary>Gets and Sets the catalog name.</summary>
+</member>
+<member name="M:Soma.Core.ProcedureAttribute.#ctor">
+ <summary>Initializes a ProcedureAttribute instance.</summary>
+</member>
+<member name="T:Soma.Core.ProcedureAttribute">
+ <summary>Indicates that a class is mapped to a stored procedure.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.ProcedureParamAttribute.Size(System.Int32)">
+ <summary>Gets and Sets the parameter size.</summary>
+</member>
+<member name="P:Soma.Core.ProcedureParamAttribute.Scale(System.Byte)">
+ <summary>Gets and Sets the parameter scale.</summary>
+</member>
+<member name="P:Soma.Core.ProcedureParamAttribute.Precision(System.Byte)">
+ <summary>Gets and Sets the parameter precision.</summary>
+</member>
+<member name="P:Soma.Core.ProcedureParamAttribute.Name(System.String)">
+ <summary>Gets and Sets the parameter name.</summary>
+</member>
+<member name="P:Soma.Core.ProcedureParamAttribute.Direction(Soma.Core.Direction)">
+ <summary>Gets and Sets the parameter direction.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.ProcedureParamAttribute.Size">
+ <summary>Gets and Sets the parameter size.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.ProcedureParamAttribute.Scale">
+ <summary>Gets and Sets the parameter scale.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.ProcedureParamAttribute.Precision">
+ <summary>Gets and Sets the parameter precision.</summary>
+</member>
+<member name="P:Soma.Core.ProcedureParamAttribute.Name">
+ <summary>Gets and Sets the parameter name.</summary>
+</member>
+<member name="P:Soma.Core.ProcedureParamAttribute.Direction">
+ <summary>Gets and Sets the parameter direction.</summary>
+</member>
+<member name="M:Soma.Core.ProcedureParamAttribute.#ctor">
+ <summary>Initializes a ProcedureParamAttribute instance.</summary>
+</member>
+<member name="T:Soma.Core.ProcedureParamAttribute">
+ <summary>Indicates that a property is mapped to a stored procedure parameter.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.SQLiteConfig.Dialect">
+ <summary>Gets the SQL dialect.</summary>
+</member>
+<member name="M:Soma.Core.SQLiteConfig.#ctor">
+ <summary>Initializes a SQLiteConfig instance.</summary>
+</member>
+<member name="T:Soma.Core.SQLiteConfig">
+ <summary>Represents a database configuration of SQLite.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.SQLiteDialect">
+ <summary>Represents a SQL dialect of MySQL 5.x.</summary>
+</member>
+<member name="P:Soma.Core.SequenceAttribute.Schema(System.String)">
+ <summary>Gets and Sets the schema name.</summary>
+</member>
+<member name="P:Soma.Core.SequenceAttribute.Name(System.String)">
+ <summary>Gets and Sets the sequence name.</summary>
+</member>
+<member name="P:Soma.Core.SequenceAttribute.IsEnclosed(System.Boolean)">
+ <summary>Gets and Sets whether names are enclosed or not.</summary>
+</member>
+<member name="P:Soma.Core.SequenceAttribute.IncrementBy(System.Int32)">
+ <summary>Gets and Sets the interval between sequence numbers.</summary>
+</member>
+<member name="P:Soma.Core.SequenceAttribute.Catalog(System.String)">
+ <summary>Gets and Sets the catalog name.</summary>
+</member>
+<member name="P:Soma.Core.SequenceAttribute.Schema">
+ <summary>Gets and Sets the schema name.</summary>
+</member>
+<member name="P:Soma.Core.SequenceAttribute.Name">
+ <summary>Gets and Sets the sequence name.</summary>
+</member>
+<member name="P:Soma.Core.SequenceAttribute.IsEnclosed">
+ <summary>Gets and Sets whether names are enclosed or not.</summary>
+</member>
+<member name="P:Soma.Core.SequenceAttribute.IncrementBy">
+ <summary>Gets and Sets the interval between sequence numbers.</summary>
+</member>
+<member name="P:Soma.Core.SequenceAttribute.Catalog">
+ <summary>Gets and Sets the catalog name.</summary>
+</member>
+<member name="M:Soma.Core.SequenceAttribute.#ctor">
+ <summary>Initializes a SequenceAttribute instance.</summary>
+</member>
+<member name="T:Soma.Core.SequenceAttribute">
+ <summary>Indicates that a property is assigned by a database sequence.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.TableAttribute.Schema(System.String)">
+ <summary>Gets and Sets the schema name.</summary>
+</member>
+<member name="P:Soma.Core.TableAttribute.Name(System.String)">
+ <summary>Gets and Sets the table name.</summary>
+</member>
+<member name="P:Soma.Core.TableAttribute.IsEnclosed(System.Boolean)">
+ <summary>Gets and Sets whether names are enclosed or not.</summary>
+</member>
+<member name="P:Soma.Core.TableAttribute.Catalog(System.String)">
+ <summary>Gets and Sets the catalog name.</summary>
+</member>
+<member name="P:Soma.Core.TableAttribute.Schema">
+ <summary>Gets and Sets the schema name.</summary>
+</member>
+<member name="P:Soma.Core.TableAttribute.Name">
+ <summary>Gets and Sets the table name.</summary>
+</member>
+<member name="P:Soma.Core.TableAttribute.IsEnclosed">
+ <summary>Gets and Sets whether names are enclosed or not.</summary>
+</member>
+<member name="P:Soma.Core.TableAttribute.Catalog">
+ <summary>Gets and Sets the catalog name.</summary>
+</member>
+<member name="M:Soma.Core.TableAttribute.#ctor">
+ <summary>Initializes a TableAttribute instance.</summary>
+</member>
+<member name="T:Soma.Core.TableAttribute">
+ <summary>Indicates that a class is mapped to a table.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.UpdateOpt.Include(System.Collections.Generic.IEnumerable{System.String})">
+ <summary>Gets and Sets property names that should be included.</summary>
+</member>
+<member name="P:Soma.Core.UpdateOpt.IgnoreVersion(System.Boolean)">
+ <summary>Gets and Sets whether the version property are ignored.</summary>
+</member>
+<member name="P:Soma.Core.UpdateOpt.ExcludeNull(System.Boolean)">
+ <summary>Gets and Sets whether null properties are excluded.</summary>
+</member>
+<member name="P:Soma.Core.UpdateOpt.Exclude(System.Collections.Generic.IEnumerable{System.String})">
+ <summary>Gets and Sets property names that should be excluded.</summary>
+</member>
+<member name="P:Soma.Core.UpdateOpt.Include">
+ <summary>Gets and Sets property names that should be included.</summary>
+</member>
+<member name="P:Soma.Core.UpdateOpt.IgnoreVersion">
+ <summary>Gets and Sets whether the version property are ignored.</summary>
+</member>
+<member name="P:Soma.Core.UpdateOpt.ExcludeNull">
+ <summary>Gets and Sets whether null properties are excluded.</summary>
+</member>
+<member name="P:Soma.Core.UpdateOpt.Exclude">
+ <summary>Gets and Sets property names that should be excluded.</summary>
+</member>
+<member name="M:Soma.Core.UpdateOpt.#ctor">
+ <summary>Initializes a UpdateOpt instance.</summary>
+</member>
+<member name="T:Soma.Core.UpdateOpt">
+ <summary>Represents the options of update operation.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.VersionAttribute.Kind">
+ <summary>The kind of version.</summary>
+</member>
+<member name="M:Soma.Core.VersionAttribute.#ctor(Soma.Core.VersionKind)">
+ <summary>Initializes a VersionAttribute instance with the VersionKind.</summary>
+</member>
+<member name="M:Soma.Core.VersionAttribute.#ctor">
+ <summary>Initializes a VersionAttribute instance.</summary>
+</member>
+<member name="T:Soma.Core.VersionAttribute">
+ <summary>Indicates that a property is mapped to a version column which is used for optimistic lock.</summary>
+</member>
+<member name="F:Soma.Core.Soma.Core.VersionKind.Computed">
+ <summary>The version is computed.</summary>
+</member>
+<member name="F:Soma.Core.Soma.Core.VersionKind.Incremented">
+ <summary>The version is incremented.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.VersionKind">
+ <summary>Defines the kinds of version columns.</summary>
+</member>
+<member name="T:Soma.Core.dynamic">
+ <summary>The abbreviation of <c>Soma.Core.IDynamicObject</c>.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.EntityNotFoundException.PreparedStatement">
+ <summary>Gets the SQL statement.</summary>
+</member>
+<member name="T:Soma.Core.EntityNotFoundException">
+ <summary>The exception that is thrown when a entity is not found by the primary keys.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.NoAffectedRowException.PreparedStatement">
+ <summary>Gets the SQL statement.</summary>
+</member>
+<member name="T:Soma.Core.NoAffectedRowException">
+ <summary>The exception that is thrown when there is no affected row by a operation such a update or delete.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.NoInsertablePropertyException">
+ <summary>The exception that is thrown when there is no insertable property.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.NoUpdatablePropertyException">
+ <summary>The exception that is thrown when there is no updatable property.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.OptimisticLockException.PreparedStatement">
+ <summary>Gets the SQL statement.</summary>
+</member>
+<member name="T:Soma.Core.OptimisticLockException">
+ <summary>The exception that is thrown when a row version is different from expected one.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Soma.Core.UniqueConstraintException.PreparedStatement">
+ <summary>Gets the SQL statement.</summary>
+</member>
+<member name="T:Soma.Core.UniqueConstraintException">
+ <summary>The exception that is thrown when a unique constraint violation is occurred.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.Conversion">
+
+</member>
+<member name="M:Soma.Core.DbModule.call``1(Soma.Core.IDbConfig,``0)">
+ <summary>Calls the stored procedure.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="procedure">The stored procedure.</param>
+ <returns>The called stored procedure.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+</member>
+<member name="M:Soma.Core.DbModule.deleteWithOpt``1(Soma.Core.IDbConfig,``0,Soma.Core.DeleteOpt)">
+ <summary>Deletes the entity with options.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="entity">The entity.</param>
+ <param name="opt">The options.</param>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+</member>
+<member name="M:Soma.Core.DbModule.delete``1(Soma.Core.IDbConfig,``0)">
+ <summary>Deletes the entity.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="entity">The entity.</param>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the entity version is different from the expected version.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+</member>
+<member name="M:Soma.Core.DbModule.updateWithOpt``1(Soma.Core.IDbConfig,``0,Soma.Core.UpdateOpt)">
+ <summary>Updates the entity with options.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="entity">The entity.</param>
+ <param name="opt">The options.</param>
+ <returns>The updated entity.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+ <exception cref="Soma.Core.NoUpdatablePropertyException">Thrown when there is no updatable property.</exception>
+</member>
+<member name="M:Soma.Core.DbModule.update``1(Soma.Core.IDbConfig,``0)">
+ <summary>Updates the entity.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="entity">The entity.</param>
+ <returns>The updated entity.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the entity version is different from the expected version.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+ <exception cref="Soma.Core.NoUpdatablePropertyException">Thrown when there is no updatable property.</exception>
+</member>
+<member name="M:Soma.Core.DbModule.insertWithOpt``1(Soma.Core.IDbConfig,``0,Soma.Core.InsertOpt)">
+ <summary>Inserts the entity.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="entity">The entity.</param>
+ <param name="opt">The options.</param>
+ <returns>The inserted entity.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.NoInsertablePropertyException">Thrown when there is no insertable property.</exception>
+</member>
+<member name="M:Soma.Core.DbModule.insert``1(Soma.Core.IDbConfig,``0)">
+ <summary>Inserts the entity.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="entity">The entity.</param>
+ <returns>The inserted entity.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.NoInsertablePropertyException">Thrown when there is no insertable property.</exception>
+</member>
+<member name="M:Soma.Core.DbModule.tryFindWithVersion``1(Soma.Core.IDbConfig,Microsoft.FSharp.Collections.FSharpList{System.Object},System.Object)">
+ <summary>Try to find the entity with the version.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="id">The list of primary keys.</param>
+ <param name="version">The expected version.</param>
+ <returns>The found entity or <c>None</c>.</returns>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the found entity version is different from the expected version.</exception>
+</member>
+<member name="M:Soma.Core.DbModule.findWithVersion``1(Soma.Core.IDbConfig,Microsoft.FSharp.Collections.FSharpList{System.Object},System.Object)">
+ <summary>Finds the entity with the version.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="id">The list of primary keys.</param>
+ <param name="version">The expected version.</param>
+ <returns>The found entity.</returns>
+ <exception cref="Soma.Core.EntityNotFoundException">Thrown when the entity is not found.</exception>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the found entity version is different from the expected version.</exception>
+</member>
+<member name="M:Soma.Core.DbModule.tryFind``1(Soma.Core.IDbConfig,Microsoft.FSharp.Collections.FSharpList{System.Object})">
+ <summary>Try to find the entity.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="id">The list of primary keys.</param>
+ <returns>The found entity or <c>None</c>.</returns>
+</member>
+<member name="M:Soma.Core.DbModule.find``1(Soma.Core.IDbConfig,Microsoft.FSharp.Collections.FSharpList{System.Object})">
+ <summary>Finds the entity.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="id">The list of primary keys.</param>
+ <returns>The found entity.</returns>
+ <exception cref="Soma.Core.EntityNotFoundException">Thrown when the entity is not found.</exception>
+</member>
+<member name="M:Soma.Core.DbModule.executeReader``1(Soma.Core.IDbConfig,Microsoft.FSharp.Core.FSharpFunc`2{System.Data.Common.DbDataReader,``0},System.String,Microsoft.FSharp.Collections.FSharpList{System.Tuple`3{System.String,System.Object,System.Type}})">
+ <summary>Executes the SQL and handles the reader.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="handler">The reader handler.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The result.</returns>
+</member>
+<member name="M:Soma.Core.DbModule.execute(Soma.Core.IDbConfig,System.String,Microsoft.FSharp.Collections.FSharpList{System.Tuple`3{System.String,System.Object,System.Type}})">
+ <summary>Executes the arbitrary SQL.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The affected rows.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+</member>
+<member name="M:Soma.Core.DbModule.paginateAndCount``1(Soma.Core.IDbConfig,System.String,Microsoft.FSharp.Collections.FSharpList{System.Tuple`3{System.String,System.Object,System.Type}},System.Int64,System.Int64)">
+ <summary>Paginates the rows, and counts rows without the offset and the limit.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <param name="offset">The offset.</param>
+ <param name="limit">The limit.</param>
+ <returns>The query result list and the count.</returns>
+</member>
+<member name="M:Soma.Core.DbModule.paginateOnDemand``1(Soma.Core.IDbConfig,System.String,Microsoft.FSharp.Collections.FSharpList{System.Tuple`3{System.String,System.Object,System.Type}},System.Int64,System.Int64)">
+ <summary>Paginates the rows on demand.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <param name="offset">The offset.</param>
+ <param name="limit">The limit.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.DbModule.paginate``1(Soma.Core.IDbConfig,System.String,Microsoft.FSharp.Collections.FSharpList{System.Tuple`3{System.String,System.Object,System.Type}},System.Int64,System.Int64)">
+ <summary>Paginates the rows.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <param name="offset">The offset.</param>
+ <param name="limit">The limit.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.DbModule.queryOnDemand``1(Soma.Core.IDbConfig,System.String,Microsoft.FSharp.Collections.FSharpList{System.Tuple`3{System.String,System.Object,System.Type}})">
+ <summary>Queries the rows on demand.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.DbModule.query``1(Soma.Core.IDbConfig,System.String,Microsoft.FSharp.Collections.FSharpList{System.Tuple`3{System.String,System.Object,System.Type}})">
+ <summary>Queries the rows.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The query condition.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="T:Soma.Core.DbModule">
+ <summary>Operations on the Database.</summary>
+ <exception cref="System.ArgumentNullException">Thrown when any arguments are null.</exception>
+</member>
+<member name="M:Soma.Core.DynamicOperations.Dynamic(Soma.Core.IDialect)">
+ <summary>Creates dynamic object with the SQL dialect.</summary>
+ <param name="dialect">The SQL dialect.</param>
+ <returns>The dynamic object.</returns>
+</member>
+<member name="M:Soma.Core.DynamicOperations.op_DynamicAssignment``1(Soma.Core.IDynamicObject,System.String,``0)">
+ <summary>Sets the property value.</summary>
+ <param name="dynamic">The dynamic object.</param>
+ <param name="propName">The property name.</param>
+ <param name="value">The property value.</param>
+</member>
+<member name="M:Soma.Core.DynamicOperations.op_Dynamic``1(Soma.Core.IDynamicObject,System.String)">
+ <summary>Gets the property value.</summary>
+ <param name="dynamic">The dynamic object.</param>
+ <param name="propName">The property name.</param>
+ <returns>The property value.</returns>
+</member>
+<member name="T:Soma.Core.DynamicOperations">
+ <summary>The dynamic Operations.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.ExpressionAst.ParseHelper">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.ExpressionAst.LexHelper">
+
+</member>
+<member name="T:Soma.Core.ExpressionAst">
+ <summary>The expression abstract syntax tree.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.ExpressionLexer">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Soma.Core.ExpressionModule.Parse(System.String)">
+ <summary>Parses the expression.</summary>
+ <param name="expr">The expression.</param>
+ <returns>The parsed expression AST.</returns>
+</member>
+<member name="T:Soma.Core.ExpressionModule">
+ <summary>Provides the expression operations.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Soma.Core.ExpressionParser.prodIdxToNonTerminal(System.Int32)">
+<summary>
+ This function maps production indexes returned in syntax errors to strings representing the non terminal that would be produced by that production
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.ExpressionParser">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.Guard">
+
+</member>
+<member name="M:Soma.Core.LocalDbModule.createConnection(Soma.Core.IDbConfig)">
+ <summary>Creates the connection.</summary>
+ <param name="config">The database configuration.</param>
+ <returns>The connection.</returns>
+</member>
+<member name="M:Soma.Core.LocalDbModule.call``1(Soma.Core.IDbConfig,System.Data.Common.DbConnection,``0)">
+ <summary>Calls the stored procedure.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="connection">The connection.</param>
+ <param name="procedure">The stored procedure.</param>
+ <returns>The called stored procedure.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+</member>
+<member name="M:Soma.Core.LocalDbModule.deleteWithOpt``1(Soma.Core.IDbConfig,System.Data.Common.DbConnection,``0,Soma.Core.DeleteOpt)">
+ <summary>Deletes the entity without the version.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="connection">The connection.</param>
+ <param name="entity">The entity.</param>
+ <param name="opt">The options.</param>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when and there is no affected row.</exception>
+</member>
+<member name="M:Soma.Core.LocalDbModule.delete``1(Soma.Core.IDbConfig,System.Data.Common.DbConnection,``0)">
+ <summary>Deletes the entity.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="connection">The connection.</param>
+ <param name="entity">The entity.</param>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the entity version is different from the expected version.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+</member>
+<member name="M:Soma.Core.LocalDbModule.updateWithOpt``1(Soma.Core.IDbConfig,System.Data.Common.DbConnection,``0,Soma.Core.UpdateOpt)">
+ <summary>Updates the entity without the version.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="connection">The connection.</param>
+ <param name="entity">The entity.</param>
+ <param name="opt">The options.</param>
+ <returns>The updated entity.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+ <exception cref="Soma.Core.NoUpdatablePropertyException">Thrown when there is no updatable property.</exception>
+</member>
+<member name="M:Soma.Core.LocalDbModule.update``1(Soma.Core.IDbConfig,System.Data.Common.DbConnection,``0)">
+ <summary>Updates the entity.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="connection">The connection.</param>
+ <param name="entity">The entity.</param>
+ <returns>The updated entity.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the entity version is different from the expected version.</exception>
+ <exception cref="Soma.Core.NoAffectedRowException">Thrown when there is no affected row.</exception>
+ <exception cref="Soma.Core.NoUpdatablePropertyException">Thrown when there is no updatable property.</exception>
+</member>
+<member name="M:Soma.Core.LocalDbModule.insertWithOpt``1(Soma.Core.IDbConfig,System.Data.Common.DbConnection,``0,Soma.Core.InsertOpt)">
+ <summary>Inserts the entity.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="connection">The connection.</param>
+ <param name="entity">The entity.</param>
+ <param name="opt">The options.</param>
+ <returns>The inserted entity.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.NoInsertablePropertyException">Thrown when there is no insertable property.</exception>
+</member>
+<member name="M:Soma.Core.LocalDbModule.insert``1(Soma.Core.IDbConfig,System.Data.Common.DbConnection,``0)">
+ <summary>Inserts the entity.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="connection">The connection.</param>
+ <param name="entity">The entity.</param>
+ <returns>The inserted entity.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+ <exception cref="Soma.Core.NoInsertablePropertyException">Thrown when there is no insertable property.</exception>
+</member>
+<member name="M:Soma.Core.LocalDbModule.tryFindWithVersion``1(Soma.Core.IDbConfig,System.Data.Common.DbConnection,Microsoft.FSharp.Collections.FSharpList{System.Object},System.Object)">
+ <summary>Try to find the entity with the version.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="connection">The connection.</param>
+ <param name="id">The list of primary keys.</param>
+ <param name="version">The expected version.</param>
+ <returns>The found entity or <c>None</c>.</returns>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the found entity version is different from the expected version.</exception>
+</member>
+<member name="M:Soma.Core.LocalDbModule.findWithVersion``1(Soma.Core.IDbConfig,System.Data.Common.DbConnection,Microsoft.FSharp.Collections.FSharpList{System.Object},System.Object)">
+ <summary>Finds the entity with the version.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="connection">The connection.</param>
+ <param name="id">The list of primary keys.</param>
+ <param name="version">The expected version.</param>
+ <returns>The found entity.</returns>
+ <exception cref="Soma.Core.EntityNotFoundException">Thrown when the entity is not found.</exception>
+ <exception cref="Soma.Core.OptimisticLockException">Thrown when the found entity version is different from the expected version.</exception>
+</member>
+<member name="M:Soma.Core.LocalDbModule.tryFind``1(Soma.Core.IDbConfig,System.Data.Common.DbConnection,Microsoft.FSharp.Collections.FSharpList{System.Object})">
+ <summary>Try to find the entity.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="connection">The connection.</param>
+ <param name="id">The list of primary keys.</param>
+ <returns>The found entity or <c>None</c>.</returns>
+</member>
+<member name="M:Soma.Core.LocalDbModule.find``1(Soma.Core.IDbConfig,System.Data.Common.DbConnection,Microsoft.FSharp.Collections.FSharpList{System.Object})">
+ <summary>Finds the entity.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="connection">The connection.</param>
+ <param name="id">The list of primary keys.</param>
+ <returns>The found entity.</returns>
+ <exception cref="Soma.Core.EntityNotFoundException">Thrown when the entity is not found.</exception>
+</member>
+<member name="M:Soma.Core.LocalDbModule.executeReader``1(Soma.Core.IDbConfig,System.Data.Common.DbConnection,Microsoft.FSharp.Core.FSharpFunc`2{System.Data.Common.DbDataReader,``0},System.String,Microsoft.FSharp.Collections.FSharpList{System.Tuple`3{System.String,System.Object,System.Type}})">
+ <summary>Executes the SQL and handles the reader.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="connection">The connection.</param>
+ <param name="handler">The reader handler.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The result.</returns>
+</member>
+<member name="M:Soma.Core.LocalDbModule.execute(Soma.Core.IDbConfig,System.Data.Common.DbConnection,System.String,Microsoft.FSharp.Collections.FSharpList{System.Tuple`3{System.String,System.Object,System.Type}})">
+ <summary>Executes the arbitrary SQL.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The affected rows.</returns>
+ <exception cref="Soma.Core.UniqueConstraintException">Thrown when a unique constraint violation is occurred.</exception>
+</member>
+<member name="M:Soma.Core.LocalDbModule.paginateAndCount``1(Soma.Core.IDbConfig,System.Data.Common.DbConnection,System.String,Microsoft.FSharp.Collections.FSharpList{System.Tuple`3{System.String,System.Object,System.Type}},System.Int64,System.Int64)">
+ <summary>Paginates the rows, and counts rows without the offset and the limit.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <param name="offset">The offset.</param>
+ <param name="limit">The limit.</param>
+ <returns>The query result list and the count.</returns>
+</member>
+<member name="M:Soma.Core.LocalDbModule.paginateOnDemand``1(Soma.Core.IDbConfig,System.Data.Common.DbConnection,System.String,Microsoft.FSharp.Collections.FSharpList{System.Tuple`3{System.String,System.Object,System.Type}},System.Int64,System.Int64)">
+ <summary>Paginates the rows on demand.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <param name="offset">The offset.</param>
+ <param name="limit">The limit.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.LocalDbModule.paginate``1(Soma.Core.IDbConfig,System.Data.Common.DbConnection,System.String,Microsoft.FSharp.Collections.FSharpList{System.Tuple`3{System.String,System.Object,System.Type}},System.Int64,System.Int64)">
+ <summary>Paginates the rows.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <param name="offset">The offset.</param>
+ <param name="limit">The limit.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="M:Soma.Core.LocalDbModule.queryOnDemand``1(Soma.Core.IDbConfig,System.Data.Common.DbConnection,System.String,Microsoft.FSharp.Collections.FSharpList{System.Tuple`3{System.String,System.Object,System.Type}})">
+ <summary>Queries the rows on demand.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The condition.</param>
+ <returns>The query result sequence.</returns>
+</member>
+<member name="M:Soma.Core.LocalDbModule.query``1(Soma.Core.IDbConfig,System.Data.Common.DbConnection,System.String,Microsoft.FSharp.Collections.FSharpList{System.Tuple`3{System.String,System.Object,System.Type}})">
+ <summary>Queries the rows.</summary>
+ <param name="config">The database configuration.</param>
+ <param name="connection">The connection.</param>
+ <param name="sql">The SQL.</param>
+ <param name="condition">The query condition.</param>
+ <returns>The query result list.</returns>
+</member>
+<member name="T:Soma.Core.LocalDbModule">
+ <summary>Operations on the local Database.</summary>
+ <exception cref="System.ArgumentNullException">Thrown when any arguments are null.</exception>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.Meta">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.SR">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.SqlAst.ParseHelper">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.SqlAst.LexHelper">
+
+</member>
+<member name="T:Soma.Core.SqlAst">
+ <summary>The SQL abstract syntax tree.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.SqlLexer">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Soma.Core.SqlModule.Parse(System.String)">
+ <summary>Parses the SQL.</summary>
+ <param name="sql">The SQL.</param>
+ <returns>The parsed SQL statement.</returns>
+</member>
+<member name="T:Soma.Core.SqlModule">
+ <summary>Provides the SQL operations.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Soma.Core.SqlParser.prodIdxToNonTerminal(System.Int32)">
+<summary>
+ This function maps production indexes returned in syntax errors to strings representing the non terminal that would be produced by that production
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.SqlParser">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.Text.Location">
+ <summary>Represents the location of the token.</summary>  
+</member>
+<member name="T:Soma.Core.Text">
+ <summary>Provides the text operations.</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.Util.Reflection">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.Util.Seq">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.Util.Map">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Soma.Core.Util.Dict">
+
+</member>
+<member name="T:Soma.Core.Util">
+
+</member>
+<member name="M:Soma.Core.UtilityOperations.op_AtEquals``1(System.String,``0)">
+ <summary>Makes name/value pair.</summary>
+ <param name="name">The name.</param>
+ <param name="value">The value.</param>
+ <returns>The pair.</returns>
+</member>
+<member name="T:Soma.Core.UtilityOperations">
+ <summary>The utility Operations.</summary>
+</member>
+</members>
+</doc>

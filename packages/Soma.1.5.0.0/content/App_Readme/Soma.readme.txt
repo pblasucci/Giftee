@@ -1,0 +1,5 @@
+﻿* English
+Add Reference to the FSharp.Core.dll(Version 4.0.0.0) assembly, if it has not added.
+
+* Japanese
+追加されていない場合は、アセンブリFSharp.Core.dll(Version 4.0.0.0)への参照を追加してください。
