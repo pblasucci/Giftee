@@ -2,4 +2,6 @@
 *.suo
 source/*/[bB]in/
 source/*/[oO]bj/
+source/*/*.resources
 *ReSharper*
+working/

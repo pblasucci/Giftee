@@ -1,18 +1,5 @@
 ﻿USE [master]
 GO
-/****** Object:  Database [Giftee]    Script Date: 10/27/2011 18:18:51 ******/
-CREATE DATABASE [Giftee] ON  PRIMARY 
-( NAME = N'Giftee', FILENAME = N'C:\working\projects\ThirdParty\Giftee\database\Giftee.mdf' , SIZE = 2048KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
- LOG ON 
-( NAME = N'Giftee_log', FILENAME = N'C:\working\projects\ThirdParty\Giftee\database\Giftee_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
-GO
-ALTER DATABASE [Giftee] SET COMPATIBILITY_LEVEL = 100
-GO
-IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
-begin
-EXEC [Giftee].[dbo].[sp_fulltext_database] @action = 'enable'
-end
-GO
 ALTER DATABASE [Giftee] SET ANSI_NULL_DEFAULT OFF
 GO
 ALTER DATABASE [Giftee] SET ANSI_NULLS OFF
@@ -42,8 +29,6 @@ GO
 ALTER DATABASE [Giftee] SET QUOTED_IDENTIFIER OFF
 GO
 ALTER DATABASE [Giftee] SET RECURSIVE_TRIGGERS OFF
-GO
-ALTER DATABASE [Giftee] SET  DISABLE_BROKER
 GO
 ALTER DATABASE [Giftee] SET AUTO_UPDATE_STATISTICS_ASYNC OFF
 GO

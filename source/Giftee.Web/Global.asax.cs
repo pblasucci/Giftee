@@ -10,10 +10,10 @@ namespace Giftee.Web
   public class MvcApplication : HttpApplication
   {
     #region Routing Constraints
-    static readonly HttpMethodConstraint GET    = new HttpMethodConstraint("GET");
-    static readonly HttpMethodConstraint PUT    = new HttpMethodConstraint("PUT");
-    static readonly HttpMethodConstraint POST   = new HttpMethodConstraint("POST");
-    static readonly HttpMethodConstraint DELETE = new HttpMethodConstraint("DELETE");
+    static readonly HttpMethodConstraintEx GET    = new HttpMethodConstraintEx("GET");
+    static readonly HttpMethodConstraintEx PUT    = new HttpMethodConstraintEx("PUT");
+    static readonly HttpMethodConstraintEx POST   = new HttpMethodConstraintEx("POST");
+    static readonly HttpMethodConstraintEx DELETE = new HttpMethodConstraintEx("DELETE");
     #endregion
 
     public static void RegisterGlobalFilters(GlobalFilterCollection filters)
@@ -25,7 +25,7 @@ namespace Giftee.Web
     {
       routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-      #region Registrations
+      #region Registration
 
       routes.MapRoute(null,"register",
                       new { controller  = "Registrations",
@@ -37,6 +37,50 @@ namespace Giftee.Web
                       new { httpMethod  = POST });
       
       #endregion
+
+      #region Authentication
+
+      routes.MapRoute(null,"enter",
+                      new { controller  = "Sessions",
+                            action      = "Create" },
+                      new { httpMethod  = GET });
+      routes.MapRoute(null,"sessions",
+                      new { controller  = "Sessions",
+                            action      = "Create" },
+                      new { httpMethod  = POST });
+      routes.MapRoute(null,"sessions/current",
+                      new { controller  = "Sessions",
+                            action      = "Delete" },
+                      new { httpMethod  = DELETE });
+      
+      #endregion
+
+      #region Password Management
+
+      routes.MapRoute(null,"password",
+                      new { controller  = "Passwords",
+                            action      = "Create" },
+                      new { httpMethod  = GET });
+      routes.MapRoute(null,"password",
+                      new { controller  = "Passwords",
+                            action      = "Create" },
+                      new { httpMethod  = POST });
+
+      routes.MapRoute(null,"my/password",
+                      new { controller  = "Passwords",
+                            action      = "Update" },
+                      new { httpMethod  = GET });
+      routes.MapRoute(null,"my/password",
+                      new { controller  = "Passwords",
+                            action      = "Update" },
+                      new { httpMethod  = POST });
+      
+      #endregion
+
+      routes.MapRoute(null,"",
+                      new { controller  = "Giftees",
+                            action      = "Select" },
+                      new { httpMethod  = GET });
     }
 
     protected void Application_AuthenticateRequest(Object _, EventArgs e)

@@ -40,10 +40,6 @@ namespace Giftee.Web.Controllers
         try
         {
           cmd.Register(info.FirstName,info.LastName,info.Email);
-          log.Info("Registered: {0} {1} ({2})",
-                   info.FirstName,
-                   info.LastName,
-                   info.Email);
         }
         catch (Exception ex)
         {
@@ -58,6 +54,8 @@ namespace Giftee.Web.Controllers
         return RedirectToAction("Create");
       }
 
+      log.Info("Registered: {0} {1} ({2})",
+               info.FirstName,info.LastName,info.Email);
       return View("Register_Success",info);
     }
   }

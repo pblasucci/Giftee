@@ -26,6 +26,23 @@ namespace Giftee.Web
     {
       return IfSome(option,v => v);
     }
+
+    public static void IfSome<_a>(this FSharpOption<_a> option,
+                                       Action<_a>       someAction,
+                                       Action           noneAction)
+    {
+      switch (OptionModule.IsSome(option)) 
+      {
+        case true : someAction(option.Value); break;
+        case false: noneAction();             break;
+      }    
+    }
+
+    public static void IfSome<_a>(this FSharpOption<_a> option,
+                                       Action<_a>       action)
+    {
+       IfSome(option,action,() => {});
+    }
   }
 
   public static class ComparisonExtensions
@@ -33,7 +50,7 @@ namespace Giftee.Web
     public static Boolean IsEqualTo<_a>(this _a left, _a right)
     {
       var areEq = ComparisonIdentity.Structural<_a>();
-      return (areEq.Compare(left,right) != 0);
+      return (areEq.Compare(left,right) == 0);
     }
   }
 

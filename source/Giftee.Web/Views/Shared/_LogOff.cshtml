@@ -1,0 +1,5 @@
+﻿@using (Html.BeginForm("Delete","Sessions",new {httpMethod="DELETE"}))
+{
+  @Html.HttpMethodOverride(HttpVerbs.Delete)
+  <input type="submit" value="Log Off" />  
+}

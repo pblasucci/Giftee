@@ -1,0 +1,45 @@
+﻿@model Giftee.Web.Models.LogOn
+@{
+  ViewBag.Title = "LogOn_Form";
+}
+<h2>
+  LogOn_Form</h2>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+@using (Html.BeginForm("Create","Sessions",new {httpMethod="POST"}))
+{
+  @Html.ValidationSummary(true)
+  <fieldset>
+    <legend>LogOn</legend>
+    <div class="editor-label">
+      @Html.LabelFor(model => model.Email)
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.Email)
+      @Html.ValidationMessageFor(model => model.Email)
+    </div>
+    <div class="editor-label">
+      @Html.LabelFor(model => model.Password)
+    </div>
+    <div class="editor-field">
+      @Html.PasswordFor(model => model.Password)
+      @Html.ValidationMessageFor(model => model.Password)
+    </div>
+    <div class="editor-label">
+      @Html.LabelFor(model => model.Persist)
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.Persist)
+      @Html.ValidationMessageFor(model => model.Persist)
+    </div>
+    <p>
+      <input type="submit" value="Log On" />
+    </p>
+  </fieldset>
+}
+<div>
+  @Html.ActionLink("Register","Create","Registrations",new{httpMethod="GET"},new{})
+</div>
+<div>
+  @Html.ActionLink("Forgot Password?","Create","Passwords",new{httpMethod="GET"},new{})
+</div>
