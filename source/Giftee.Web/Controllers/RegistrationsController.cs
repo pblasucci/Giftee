@@ -6,17 +6,6 @@ using System.Web.Mvc;
 
 using cmd = Giftee.Core.Commands;
 
-namespace Giftee.Web.Models
-{
-  public class Registration
-  {
-    [Required,StringLength( 64)] public String FirstName    { get;set; }
-    [Required,StringLength( 64)] public String LastName     { get;set; }
-    [Required,StringLength(255)] public String Email        { get;set; }
-    [Required,Compare("Email") ] public String EmailConfirm { get;set; }
-  }
-}
-
 namespace Giftee.Web.Controllers
 {
   public class RegistrationsController : Controller

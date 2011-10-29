@@ -11,6 +11,7 @@
   @RenderBody()
   @if(User.Identity.IsAuthenticated) 
   {
+    @Html.ActionLink("Wishlist","Gather","Wishes",new{httpMethod="GET"},new{})
     @Html.Partial("_LogOff");
   }
 </body>

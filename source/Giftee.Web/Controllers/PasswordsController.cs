@@ -6,23 +6,6 @@ using System.Web.Mvc;
 
 using cmd = Giftee.Core.Commands;
 
-namespace Giftee.Web.Models
-{
-  public class ForgotPassword
-  {
-    [Required] public String Email { get;set; }
-  }
-
-  public class PasswordSet
-  {
-    [Required] public String OldPassword { get;set; }
-    [Required] public String NewPassword { get;set; }
-    [Required,
-     Compare("NewPassword") ] 
-    public String NewPasswordConfirm { get;set; }
-  }
-}
-
 namespace Giftee.Web.Controllers
 {
   public class PasswordsController : Controller

@@ -67,12 +67,14 @@
     <Compile Include="Controllers\PasswordsController.cs" />
     <Compile Include="Controllers\RegistrationsController.cs" />
     <Compile Include="Controllers\SessionsController.cs" />
+    <Compile Include="Controllers\WishesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Library\Extensions.cs" />
     <Compile Include="Library\GifteePrincipal.cs" />
     <Compile Include="Library\HttpMethodConstraintEx.cs" />
+    <Compile Include="Library\Models.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -144,12 +146,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Giftee.Core\Giftee.Core.fsproj">
-      <Project>{C72969F6-E660-402F-8D5F-A552031E68CA}</Project>
-      <Name>Giftee.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Logs\" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +168,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Passwords\ResetPwd_Success.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Giftee.Core\Giftee.Core.fsproj">
+      <Project>{C72969F6-E660-402F-8D5F-A552031E68CA}</Project>
+      <Name>Giftee.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Wishes\Wish_List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Wishes\Wish_Form.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

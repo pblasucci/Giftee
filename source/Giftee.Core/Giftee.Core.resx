@@ -151,12 +151,16 @@ In order to start using Giftee, you'll need to visit http://giftee.ws and enter 
 Happy Holidays!</value>
     <comment>Message sent to newly registered accounts.</comment>
   </data>
+  <data name="SQL_DeleteWishByID" xml:space="preserve">
+    <value>delete from Wishes where ID = /* wishID */''</value>
+    <comment>Delete wish record with the gven ID.</comment>
+  </data>
   <data name="SQL_GiftorByEmail" xml:space="preserve">
     <value>select ID,FirstName,LastName,Email,Password,IsAdmin,GroupAs,GifteeID from Giftors where Email = /* email */''</value>
     <comment>Queries a giftor record with the given e-mail.</comment>
   </data>
   <data name="SQL_GiftorWishes" xml:space="preserve">
-    <value>select ID,GiftorID,Rank,Summary from Wishes where GiftorID = /* giftorID */''</value>
+    <value>select ID,GiftorID,Rank,Summary from Wishes where GiftorID = /* giftorID */'' order by Rank asc</value>
     <comment>Queries all wish records with the given giftor ID.</comment>
   </data>
 </root>

@@ -1,0 +1,39 @@
+﻿@model Giftee.Web.Models.Wish
+@{
+  ViewBag.Title = "Wish_Form";
+  var isNew  = (Model == null) || (Model.ID == Guid.Empty);
+  var action = isNew ? "Create" : "Update";
+  var method = isNew ? "POST"   : "PUT";
+}
+<h2>
+  Wish_Form</h2>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+@using (Html.BeginForm(action,"Wishes",new{httpMethod=method}))
+{
+  if (!isNew) { @Html.HttpMethodOverride(HttpVerbs.Put) }
+  @Html.ValidationSummary(true)
+  <fieldset>
+    <legend>Wish</legend>
+    <div class="editor-label">
+      @Html.LabelFor(model => model.Rank)
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.Rank)
+      @Html.ValidationMessageFor(model => model.Rank)
+    </div>
+    <div class="editor-label">
+      @Html.LabelFor(model => model.Summary)
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.Summary)
+      @Html.ValidationMessageFor(model => model.Summary)
+    </div>
+    <p>
+      <input type="submit" value="@(action)" />
+    </p>
+  </fieldset>
+}
+<div>
+  @Html.ActionLink("Back to List", "Gather")
+</div>

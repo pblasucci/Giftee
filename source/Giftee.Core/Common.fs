@@ -23,3 +23,4 @@ module Resources =
   module SQL =
     let giftorByEmail = resxMgr.GetString("SQL_GiftorByEmail")
     let giftorWishes  = resxMgr.GetString("SQL_GiftorWishes")
+    let deleteWish    = resxMgr.GetString("SQL_DeleteWishByID")

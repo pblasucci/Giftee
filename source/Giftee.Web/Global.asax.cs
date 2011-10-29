@@ -77,6 +77,40 @@ namespace Giftee.Web
       
       #endregion
 
+      #region Wish Management
+      
+      routes.MapRoute(null,"my/wishes",
+                      new { controller  = "Wishes",
+                            action      = "Gather" },
+                      new { httpMethod  = GET });
+
+      routes.MapRoute(null,"my/wishes/new",
+                      new { controller  = "Wishes",
+                            action      = "Create" },
+                      new { httpMethod  = GET });
+
+      routes.MapRoute(null,"my/wishes",
+                      new { controller  = "Wishes",
+                            action      = "Create" },
+                      new { httpMethod  = POST });
+
+      routes.MapRoute(null,"my/wishes/{wishID}/form",
+                      new { controller  = "Wishes",
+                            action      = "Update" },
+                      new { httpMethod  = GET });
+
+      routes.MapRoute(null,"my/wishes/{wishID}",
+                      new { controller  = "Wishes",
+                            action      = "Update" },
+                      new { httpMethod  = PUT });
+
+      routes.MapRoute(null,"my/wishes/{wishID}",
+                      new { controller  = "Wishes",
+                            action      = "Delete" },
+                      new { httpMethod  = DELETE });
+
+      #endregion
+
       routes.MapRoute(null,"",
                       new { controller  = "Giftees",
                             action      = "Select" },

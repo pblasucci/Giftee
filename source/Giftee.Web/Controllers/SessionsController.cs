@@ -9,16 +9,6 @@ using System.Web.Security;
 using cmd = Giftee.Core.Commands;
 using userOption = Microsoft.FSharp.Core.FSharpOption<Giftee.Core.Models.User>;
 
-namespace Giftee.Web.Models
-{
-  public class LogOn
-  {
-    [Required] public String  Email     { get;set; }
-    [Required] public String  Password  { get;set; }
-               public Boolean Persist   { get;set; }
-  }
-}
-
 namespace Giftee.Web.Controllers
 {
   public class SessionsController : Controller
@@ -45,7 +35,7 @@ namespace Giftee.Web.Controllers
           user = cmd.Authenticate(info.Email,info.Password);
 
           user.IfSome( u => log.Info("Log On Success: {0}",u.Email),
-                      () => log.Warn("Log On Failure: {0}/{1}",
+                      () => log.Warn("Log On Failure: {0}/'{1}'",
                                      info.Email,info.Password));
 
           if (OptionModule.IsNone(user))
@@ -61,7 +51,7 @@ namespace Giftee.Web.Controllers
       if (!ModelState.IsValid || OptionModule.IsNone(user))
       {
         TempData["modelState"] = ModelState;
-        return RedirectToAction("Create");
+        return RedirectToAction("Create",new {httpMethod = "GET"});
       }
 
       var defaultUrl = Url.Action("Select","Giftees",new{httpMethod="GET"});

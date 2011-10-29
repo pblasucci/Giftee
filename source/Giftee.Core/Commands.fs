@@ -94,7 +94,7 @@ module Commands =
 
   [<CompiledName("GatherWishes")>]
   let gatherWishes (giftorID:Guid) =
-    Db.query<Wish> R.SQL.giftorWishes ["giftorId" @= giftorID]
+    Db.query<Wish> R.SQL.giftorWishes ["giftorID" @= giftorID]
 
   [<CompiledName("InsertWish")>]
   let insertWish giftorID rank summary =
@@ -102,3 +102,16 @@ module Commands =
                 GiftorID = giftorID
                 Rank     = rank
                 Summary  = summary } |> ignore
+
+  [<CompiledName("SelectWish")>]
+  let selectWish wishID = Db.find<Wish> [ wishID ]
+
+  [<CompiledName("UpdateWish")>]
+  let updateWish wishID rank summary = 
+    let wish = Db.find<Wish> [ wishID ]
+    Db.update {wish with Rank    = rank; 
+                         Summary = summary} |> ignore
+
+  [<CompiledName("DeleteWish")>]
+  let deleteWish wishID =
+    Db.execute R.SQL.deleteWish [ "wishID" @= wishID ]
