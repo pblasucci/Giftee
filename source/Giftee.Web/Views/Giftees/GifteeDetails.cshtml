@@ -1,9 +1,22 @@
 ﻿@model Giftee.Web.Models.LogOn
+
 @{
   ViewBag.Title = "GifteeDetails";
 }
-<h2>
-  GifteeDetails</h2>
 
-@Html.ActionLink("Change Password",
-                     "Update","Passwords",new{httpMethod="GET"},new{})
+<h2>GifteeDetails</h2>
+
+<ul>
+  <li>
+  @Html.ActionLink("My Wishlist",
+                   "Gather","Wishes",
+                   new{ httpMethod="GET" },
+                   new{ /* ... */ })
+  </li>
+  <li>
+  @Html.ActionLink("Change Password",
+                   "Update","Passwords",
+                   new{ httpMethod="GET" },
+                   new{ /* ... */ })
+  </li>
+</ul>

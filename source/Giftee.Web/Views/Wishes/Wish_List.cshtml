@@ -2,35 +2,33 @@
 @{
   ViewBag.Title = "Wish_List";
 }
-<h2>
-  Wish_List</h2>
+
+<h2>Wish_List</h2>
+
 <p>
-  @Html.ActionLink("Create New", "Create",new{ httpMethod="GET" })
+  @Html.ActionLink("New Wish", "Create",new{ httpMethod="GET" })
 </p>
+
 <table>
   <tr>
-    <th>
-      Rank
-    </th>
-    <th>
-      Summary
-    </th>
+    <th>Rank</th>
+    <th>Summary</th>
     <th>
     </th>
   </tr>
   @foreach (var item in Model)
   {
     <tr>
+      <td>@Html.DisplayFor(modelItem => item.Rank)</td>
+      <td>@Html.DisplayFor(modelItem => item.Summary)</td>
       <td>
-        @Html.DisplayFor(modelItem => item.Rank)
-      </td>
-      <td>
-        @Html.DisplayFor(modelItem => item.Summary)
-      </td>
-      <td>
-        @Html.ActionLink("Edit", "Update", "Wishes", new { wishID = item.ID, httpMethod="GET" },new{}) |
+        @Html.ActionLink("Edit", 
+                         "Update","Wishes", 
+                         new { wishID     = item.ID, 
+                               httpMethod = "GET" },
+                         new{ /* ... */ }) |
         @using (Html.BeginForm("Delete", "Wishes", 
-                               new { wishID = item.ID,
+                               new { wishID     = item.ID,
                                      httpMethod = "DELETE" }))
         {
           @Html.HttpMethodOverride(HttpVerbs.Delete)
@@ -40,3 +38,18 @@
     </tr>
   }
 </table>
+
+<ul>
+  <li>
+  @Html.ActionLink("My Giftee",
+                   "Select","Giftees",
+                   new{ httpMethod="GET" },
+                   new{ /* ... */ })
+  </li>
+  <li>
+  @Html.ActionLink("Change Password",
+                   "Update","Passwords",
+                   new{ httpMethod="GET" },
+                   new{ /* ... */ })
+  </li>
+</ul>

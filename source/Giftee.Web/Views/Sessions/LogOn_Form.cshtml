@@ -2,11 +2,17 @@
 @{
   ViewBag.Title = "LogOn_Form";
 }
-<h2>
-  LogOn_Form</h2>
-<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
-<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
-@using (Html.BeginForm("Create","Sessions",new {httpMethod="POST"}))
+
+<h2>LogOn_Form</h2>
+
+<script type="text/javascript" 
+        src="@Url.Content("~/Scripts/jquery.validate.min.js")">
+        </script>
+<script type="text/javascript" 
+        src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")">
+        </script>
+
+@using (Html.BeginForm("Create","Sessions",new { httpMethod="POST" }))
 {
   @Html.ValidationSummary(true)
   <fieldset>
@@ -37,9 +43,18 @@
     </p>
   </fieldset>
 }
-<div>
-  @Html.ActionLink("Register","Create","Registrations",new{httpMethod="GET"},new{})
-</div>
-<div>
-  @Html.ActionLink("Forgot Password?","Create","Passwords",new{httpMethod="GET"},new{})
-</div>
+
+<ul>
+  <li>
+  @Html.ActionLink("Forgot Password?",
+                   "Create","Passwords",
+                   new{ httpMethod="GET" },
+                   new{ /* ... */ })
+  </li>
+  <li>
+  @Html.ActionLink("Register",
+                   "Create","Registrations",
+                   new{ httpMethod="GET" },
+                   new{ @class="popup" })
+  </li>
+</ul>
