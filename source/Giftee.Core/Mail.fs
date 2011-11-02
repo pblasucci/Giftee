@@ -10,10 +10,10 @@ module R = Giftee.Core.Resources
 
 module Mail =
 
-  let apiUrl = Uri(cfgMgr.AppSettings.["mailgun_url"])
-  let apiKey =     cfgMgr.AppSettings.["mailgun_key"]
+  let apiUrl = Uri(cfgMgr.AppSettings.["MAILGUN_API_URL"])
+  let apiKey =     cfgMgr.AppSettings.["MAILGUN_API_KEY"]
   
-  let systemAddress = cfgMgr.AppSettings.["system_email"]
+  let systemAddress = cfgMgr.AppSettings.["POSTMASTER_ADDR"]
   
   let credential =
     let cc = CredentialCache()

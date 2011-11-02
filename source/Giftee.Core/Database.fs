@@ -7,7 +7,7 @@ module Database =
   let config = 
     { new MsSqlConfig() with
         member __.ConnectionString = 
-          cfgMgr.ConnectionStrings.["GifteeDb"].ConnectionString }
+          cfgMgr.ConnectionStrings.["giftee"].ConnectionString }
 
   let query<'T>         = Db.query<'T>          config
   let queryOnDemand<'T> = Db.queryOnDemand<'T>  config
