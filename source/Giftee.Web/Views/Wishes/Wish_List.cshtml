@@ -3,53 +3,77 @@
   ViewBag.Title = "Wish_List";
 }
 
-<h2>Wish_List</h2>
-
-<p>
-  @Html.ActionLink("New Wish", "Create",new{ httpMethod="GET" })
-</p>
-
-<table>
-  <tr>
-    <th>Rank</th>
-    <th>Summary</th>
-    <th>
-    </th>
-  </tr>
-  @foreach (var item in Model)
-  {
-    <tr>
-      <td>@Html.DisplayFor(modelItem => item.Rank)</td>
-      <td>@Html.DisplayFor(modelItem => item.Summary)</td>
-      <td>
-        @Html.ActionLink("Edit", 
-                         "Update","Wishes", 
-                         new { wishID     = item.ID, 
-                               httpMethod = "GET" },
-                         new{ /* ... */ }) |
-        @using (Html.BeginForm("Delete", "Wishes", 
-                               new { wishID     = item.ID,
-                                     httpMethod = "DELETE" }))
-        {
-          @Html.HttpMethodOverride(HttpVerbs.Delete)
-          <input type="submit" value="Delete" />
-        }
-      </td>
-    </tr>
+<fieldset>
+  <legend>My Wishlist</legend>
+  @{
+    var itemCount = 0;  
   }
-</table>
+  <table>
+    <tbody>
+    @if (Model.Count() == 0)
+    {
+      <tr>
+        <td class="col_empty">
+          You haven't added any wishes yet. You probably should; the 
+          wishlist is a great way to help your Giftor understand what sort 
+          of things you want or need this Christmas.
+        </td>
+      </tr>
+    }
+    else
+    {
+      foreach (var item in Model)
+      {
+        itemCount++;
+      <tr>
+        <td class="col_rank">@(itemCount).</td>
+        <td class="col_wrap">
+        <pre class="scroll_block">@Html.DisplayFor(modelItem => item.Summary)</pre>
+        </td>
+        <td class="col_drop">
+          @using (Html.BeginForm("Delete", "Wishes", 
+                                  new { wishID     = item.ID,
+                                        httpMethod = "DELETE" },
+                                  FormMethod.Post,
+                                  new { @class    = "delete",
+                                        data_item = item.Summary}))
+          {
+            @Html.HttpMethodOverride(HttpVerbs.Delete)
+            <span>(</span><input type="submit" value="Remove" /><span>)</span>
+          }
+        </td>
+      </tr>
+      }
+    }
+    </tbody>
+  </table>
+</fieldset>
 
-<ul>
-  <li>
-  @Html.ActionLink("My Giftee",
+<div class="navigate">
+  <p>I want to 
+  @Html.ActionLink("add a wish", "Create",new{ httpMethod="GET" })
+  to this list.</p>
+  <p>This looks good. Let me 
+  @Html.ActionLink("view info about my Giftee",
                    "Select","Giftees",
                    new{ httpMethod="GET" },
-                   new{ /* ... */ })
-  </li>
-  <li>
-  @Html.ActionLink("Change Password",
+                   new{ /* ... */ }).</p>
+  <p>It's time to 
+  @Html.ActionLink("change my password",
                    "Update","Passwords",
                    new{ httpMethod="GET" },
-                   new{ /* ... */ })
-  </li>
-</ul>
+                   new{ /* ... */ }).</p>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("form.delete input[type=submit]")
+    .mouseover (function(){$(this).css("text-decoration","none"     );})
+    .mouseleave(function(){$(this).css("text-decoration","underline");});
+  $("form.delete").submit(function(){ 
+    return confirm("You are about to remove a wish for\n\n"
+                  + $(this).attr("data-item")
+                  +"\n\nThis can not be undone. Continue anyway?");
+  });
+});
+</script>

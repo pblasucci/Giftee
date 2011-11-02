@@ -3,8 +3,6 @@
   ViewBag.Title = "LogOn_Form";
 }
 
-<h2>LogOn_Form</h2>
-
 <script type="text/javascript" 
         src="@Url.Content("~/Scripts/jquery.validate.min.js")">
         </script>
@@ -14,11 +12,10 @@
 
 @using (Html.BeginForm("Create","Sessions",new { httpMethod="POST" }))
 {
-  @Html.ValidationSummary(true)
   <fieldset>
-    <legend>LogOn</legend>
+    <legend>Please enter your e-mail address and password.</legend>
     <div class="editor-label">
-      @Html.LabelFor(model => model.Email)
+      @Html.LabelFor(model => model.Email,"E-Mail")
     </div>
     <div class="editor-field">
       @Html.EditorFor(model => model.Email)
@@ -32,29 +29,21 @@
       @Html.ValidationMessageFor(model => model.Password)
     </div>
     <div class="editor-label">
-      @Html.LabelFor(model => model.Persist)
-    </div>
-    <div class="editor-field">
-      @Html.EditorFor(model => model.Persist)
-      @Html.ValidationMessageFor(model => model.Persist)
-    </div>
-    <p>
       <input type="submit" value="Log On" />
-    </p>
+    </div>
   </fieldset>
+  @Html.ValidationSummary(true)
 }
 
-<ul>
-  <li>
-  @Html.ActionLink("Forgot Password?",
+<div class="navigate">
+  <p>Forgot your password?
+  @Html.ActionLink("Click here to get a new password",
                    "Create","Passwords",
                    new{ httpMethod="GET" },
-                   new{ /* ... */ })
-  </li>
-  <li>
-  @Html.ActionLink("Register",
+                   new{ /* ... */ }).</p>
+  <p>Haven't signed-up yet?
+  @Html.ActionLink("Follow this link to Register",
                    "Create","Registrations",
                    new{ httpMethod="GET" },
-                   new{ @class="popup" })
-  </li>
-</ul>
+                   new{ @class="popup" }) now.</p>
+</div>

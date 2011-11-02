@@ -1,5 +1,15 @@
-﻿@using (Html.BeginForm("Delete","Sessions",new {httpMethod="DELETE"}))
+﻿<div class="logoff_form">
+@using (Html.BeginForm("Delete","Sessions",new {httpMethod="DELETE"}))
 {
   @Html.HttpMethodOverride(HttpVerbs.Delete)
-  <input type="submit" value="Log Off" />  
+  <p>I'm done for now. 
+  <input type="submit" value="Log me off" />, please.</p>
 }
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+  btn = $("div.logoff_form input[type=submit]");
+  btn.mouseover(function(e){$(this).css("text-decoration","none");});
+  btn.mouseleave(function(e){$(this).css("text-decoration","underline");});
+});
+</script>

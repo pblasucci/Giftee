@@ -1,22 +1,22 @@
-﻿@model Giftee.Web.Models.LogOn
-
-@{
+﻿@{
   ViewBag.Title = "GifteeDetails";
 }
 
-<h2>GifteeDetails</h2>
-
-<ul>
-  <li>
-  @Html.ActionLink("My Wishlist",
+<fieldset>
+  <legend>My Giftee</legend>
+  <p>Apologies, <span>@(ViewBag.DisplayName)</span>, 
+  but Giftee names haven't been picked yet.</p>
+  <p>In the meantime, why don't you get started  
+  @Html.ActionLink("bulding a wishlist",
                    "Gather","Wishes",
                    new{ httpMethod="GET" },
-                   new{ /* ... */ })
-  </li>
-  <li>
-  @Html.ActionLink("Change Password",
+                   new{ /* ... */ })?</p>
+</fieldset>
+
+<div class="navigate">
+  <p>I'd like to 
+  @Html.ActionLink("change my password",
                    "Update","Passwords",
                    new{ httpMethod="GET" },
-                   new{ /* ... */ })
-  </li>
-</ul>
+                   new{ /* ... */ }), just now.</p>
+</div>

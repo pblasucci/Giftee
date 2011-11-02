@@ -9,6 +9,24 @@ body
     margin: 0;
 }
 
+a:link
+{
+  color: #6cb9d2;
+  text-decoration:underline;
+}
+
+a:active,a:hover
+{
+  color: #6cb9d2;
+  text-decoration: none;
+}
+
+a:visited
+{
+  color: #423d8e;
+  text-decoration:underline;
+}
+
 .site_container
 {
   text-align:center;
@@ -59,6 +77,7 @@ body
 
 .site_body
 {
+  text-align: center;
   margin: 10px;
 }
 
@@ -69,14 +88,104 @@ section {
     display: block;
 }
 
+div.navigate,div.logoff_form
+{
+  min-width: 400px;
+  width: 50%;
+  text-align: left;
+  padding: 0 auto;
+  margin: 0 auto;
+}
+
+form.delete
+{
+  display: inline-block;  
+}
+
+div.logoff_form input[type=submit],form.delete input[type=submit]
+{
+  background-color: transparent;
+  color: #423d8e;
+  font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+  padding: 0;
+  text-decoration: underline;
+  cursor: pointer;
+  border-width: 0;
+  margin: 0;
+}
+
+pre.scroll_block
+{
+  width: auto;
+  max-height: 100px;
+  height: auto;
+  overflow: auto;
+  white-space: pre-line;  
+  vertical-align: top;
+  padding: 0;
+  border-bottom: 1px solid #e5e5e5;
+  margin: 0;
+}
+
+
 /* Styles for basic forms
 -----------------------------------------------------------*/
 
-fieldset 
+fieldset
 {
-    border:1px solid #ddd;
-    padding:0 1.4em 1.4em 1.4em;
-    margin:0 0 1.5em 0;
+  min-width: 400px;
+  width: 50%;
+  text-align: left;
+  padding: 0 1.4em 1.4em 1.4em;
+  border: 1px solid #ddd;
+  margin: 0 auto 1.5em auto;
+}
+
+table
+{
+  width: 100%;
+  text-align: left;
+  padding: 0 1.4em 1.4em 1.4em;
+  border-collapse: collapse;
+  border-width: 0;
+  margin: 10px auto 1.5em auto;
+}
+
+td.col_rank
+{
+  width: auto;
+  white-space: nowrap;
+  text-align: right;
+  vertical-align: top;
+  padding: 10px 10px;
+}
+
+td.col_wrap
+{
+  width: 100%;
+  max-width: 320px;
+  text-align: left;
+  vertical-align: top;
+  padding: 10px 2px;
+}
+
+td.col_drop
+{
+  width: auto;
+  white-space: nowrap;
+  text-align: left;
+  vertical-align: top;
+  padding: 10px 2px;
+}
+
+td.col_empty
+{
+  width: 100%;
+  color: #999;
+  font-style: italic;
+  text-align: left;
+  vertical-align: middle;
+  padding: 10px 2px;
 }
 
 legend 
@@ -85,21 +194,29 @@ legend
     font-weight: bold;
 }
 
+pre
+{
+  font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif; 
+}
+  
 textarea 
 {
-    min-height: 75px;
+  min-width: 250px;
+  width: 100%;
+  min-height: 75px;
+  font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+  margin-top: 10px;
 }
 
 .editor-label 
 {
-    margin: 1em 0 0 0;
+  margin: 1em 0 0 0;
 }
 
 .editor-field 
 {
     margin:0.5em 0 0 0;
 }
-
 
 /* Styles for validation helpers
 -----------------------------------------------------------*/
@@ -121,8 +238,19 @@ textarea
 
 .validation-summary-errors
 {
-    font-weight: bold;
-    color: #ff0000;
+  min-width: 400px;
+  width: 50%;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ff0000;
+  margin: 0 auto;
+}
+
+.validation-summary-errors li
+{
+  list-style-type: none;
+  list-style-image: none;
+  text-align: left;
 }
 
 .validation-summary-valid

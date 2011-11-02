@@ -1,12 +1,11 @@
 ﻿@model Giftee.Web.Models.Wish
 @{
   ViewBag.Title = "Wish_Form";
-  var isNew  = (Model == null) || (Model.ID == Guid.Empty);
-  var action = isNew ? "Create" : "Update";
-  var method = isNew ? "POST"   : "PUT";
+  var isNew   = (Model == null) || (Model.ID == Guid.Empty);
+  var action  = isNew ? "Create"   : "Update";
+  var method  = isNew ? "POST"     : "PUT";
+  var command = isNew ? "Add Wish" : "Update Wish";
 }
-
-<h2>Wish_Form</h2>
 
 <script type="text/javascript" 
         src="@Url.Content("~/Scripts/jquery.validate.min.js")">
@@ -18,31 +17,25 @@
 @using (Html.BeginForm(action,"Wishes",new{ httpMethod=method }))
 {
   if (!isNew) { @Html.HttpMethodOverride(HttpVerbs.Put) }
-  @Html.ValidationSummary(true)
   <fieldset>
-    <legend>Wish</legend>
-    <div class="editor-label">
-      @Html.LabelFor(model => model.Rank)
-    </div>
+    <legend>
+    Describe something you'd like to receive from your giftor.
+    </legend>
     <div class="editor-field">
-      @Html.EditorFor(model => model.Rank)
-      @Html.ValidationMessageFor(model => model.Rank)
-    </div>
-    <div class="editor-label">
-      @Html.LabelFor(model => model.Summary)
-    </div>
-    <div class="editor-field">
-      @Html.EditorFor(model => model.Summary)
+      @Html.TextAreaFor(model => model.Summary)
       @Html.ValidationMessageFor(model => model.Summary)
     </div>
     <p>
-      <input type="submit" value="@(action)" />
+      <input type="submit" value="@(command)" />
     </p>
   </fieldset>
+  @Html.ValidationSummary(true)
 }
-<div>
-  @Html.ActionLink("Back to List",
+
+<div class="navigate">
+  <p>Okay, that looks good. Take me 
+  @Html.ActionLink("back to my wishlist",
                    "Gather","Wishes",
                    new { httpMethod = "GET" },
-                   new { /* ... */ })
+                   new { /* ... */ }).</p>
 </div>

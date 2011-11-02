@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
 using cmd = Giftee.Core.Commands;
+using int32Option = Microsoft.FSharp.Core.FSharpOption<System.Int32>;
 
 namespace Giftee.Web.Controllers
 {
@@ -45,7 +46,7 @@ namespace Giftee.Web.Controllers
         //MAYBE: double-check validation?
         try
         {
-          cmd.InsertWish(CurrentUser.ID,info.Rank,info.Summary);
+          cmd.InsertWish(CurrentUser.ID,0,info.Summary);
         }
         catch (Exception ex)
         {
@@ -81,7 +82,7 @@ namespace Giftee.Web.Controllers
         //MAYBE: double-check validation?
         try
         {
-          cmd.UpdateWish(wishID,info.Rank,info.Summary);
+          cmd.UpdateWish(wishID,0,info.Summary);
         }
         catch (Exception ex)
         {

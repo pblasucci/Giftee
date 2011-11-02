@@ -40,7 +40,7 @@ namespace Giftee.Web.Controllers
       if (!ModelState.IsValid)
       {
         TempData["modelState"] = ModelState;
-        return RedirectToAction("Create");
+        return RedirectToAction("Create",new { httpMethod="GET" });
       }
 
       log.Info("Registered: {0} {1} ({2})",
