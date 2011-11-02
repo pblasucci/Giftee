@@ -1,0 +1,447 @@
+﻿<html>
+
+<head>
+    <Attribute>
+<title>The F# 2.0 SP1 Free Tools Release, 2.0.0.0</title>
+
+  <link type="text/css" rel="Stylesheet" href="/rmcstyle.css"><link type="text/css" rel="Stylesheet" href="doc/rmcstyle-copy.css">
+  <link type="text/css" rel="Stylesheet" href="/groupStyle.css"><link type="text/css" rel="Stylesheet" href="doc/groupStyle-copy.css">
+
+  <style type="text/css">
+  TT { font-weight: bold; color: blue; font-size: 10pt; }
+  PRE { font-weight: bold; color: blue; font-size: 10pt;  }
+      
+.title_2ndLvl
+{
+	font-family: tahoma;
+	font-size: 120%;
+	color: #FFFFFF;
+	padding-left: 5px;
+}
+.BODY
+{
+	font-family:verdana;
+}
+A
+{
+	color: #003399;
+}
+.VR
+{
+	background-color: #cccccc;
+	width: 1px;
+}
+.HR
+{
+	background-color: #cccccc;
+	height: 1px;
+}
+.link1
+{
+	font-size:70%;
+	font-family: verdana;
+}
+.link2
+{
+	font-size: 70%;
+	font-family:Verdana;
+	font-style:italic;
+}
+.link3
+{
+	font-style: italic;
+	font-family: Verdana;
+	color: #000000;
+	font-weight: bold;
+}
+.link4
+{
+	font: italic 70% Verdana;
+	color: #000000;
+	text-decoration: none;
+}
+.link5
+{
+	font: 70% Verdana;
+	color: #003399;
+	text-decoration: none;
+}
+.link6
+{
+	font: 70% verdana;
+	color: #003399;
+}
+.text1
+{
+	font: 70% Verdana;
+}
+.text2
+{
+	padding-bottom: 10px;
+	font: 70% Verdana;
+}
+.text3
+{
+	font-size: 120%;
+	font-family:Verdana;
+	color: #000000;
+}
+.text3_w_padding
+{
+	font: 120% Verdana;
+	color: #000000;
+	padding-left:20px;
+}
+.text4
+{
+	font-weight: bold;
+	font-size: 70%;
+	font-family: Verdana;
+	color: #000000;
+}
+.text5
+{
+	padding-left: 5px;
+	font-weight: bold;
+	font-size: 70%;
+	font-family: Verdana;
+	color: #ffffff;
+}
+.text6
+{
+	font: 70%;
+	font-family: verdana;
+}
+.newsTitle
+{
+	font-family: tahoma;
+	font-size: 120%;
+	color: #CCCCCC;
+}
+.areaTitle
+{
+	font-family: tahoma;
+	font-size: 120%;
+	color: #FFFFFF;
+}
+.newsContentTitle
+{
+	font-family: tahoma;
+	font-size: 120%;
+	color: #FFFFFF;
+}
+.areaContentTitle
+{
+	font-family: verdana;
+	font-size: 140%;
+	color: #000000;
+}
+.areaContentTitle_w_pad
+{
+	font-family: verdana;
+	font-size: 140%;
+	color: #000000;
+	padding-left: 20px;
+	padding-top: 20px;
+}
+
+.newsArchiveTitle
+{
+	font-family: verdana;
+	font-size: 150%;
+	color: #000000;
+}
+.FeatureStoryTitle
+{
+	font-family: verdana;
+	font-size: 130%;
+	color: #000000;
+}
+.FeatureStoryByLine
+{
+	font-family: verdana;
+	font-size: 80%;
+	color: #000000;
+}
+.SideBarLink
+{
+	font-family: verdana;
+	font-size: 80%;
+	color: #000000;
+}
+.newsArchiveSubTitle
+{
+	font-family: verdana;
+	font-size: 118%;
+	color: #666666;
+}
+.newsArchiveYear
+{
+	font: bold 80% Verdana;
+	color: #000000;
+	border-bottom: #cccccc 1px solid;
+	border-top: #cccccc 1px solid;
+}
+
+.newsHeadlineTitle
+{
+	font-family: verdana;
+	font-size: 140%;
+	color: #000000;
+}
+
+.newsPublicationDate
+{
+	font-family: Verdana;
+	font-size: 60%;
+	color: #000000;
+	font-weight: bold;
+}
+.newsPublicationSource
+{
+	font-family: Verdana;
+	font-size: 60%;
+	color: #000000;
+	font-weight: bold;
+}
+H1
+{
+	font-family: tahoma;
+	font-weight: bold;
+	font-size: 120%;
+	color: #000000;
+}
+H3
+{
+	font-family: tahoma;
+	font-weight: bold;
+	font-size: 110%;
+	color: #000000;
+}
+P
+{
+	font-family: verdana;
+	font-size: 70%;
+	color: #000000;
+}
+P P
+{
+	font-size: 100%;
+}
+HR
+{
+	color: #cccccc;
+	height: 1px;
+}
+
+
+.groupheading
+{
+	padding-left: 20px;
+	padding-top: 40px;
+	padding-bottom: 10px;
+	font-size: 1.4em;
+	color: #0065CF;
+	font-family:verdana;
+}
+.GroupTitle
+{
+	padding-left: 20px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	font-size: 1.4em;
+	color: #0065CF;
+}
+LI
+{
+	font-size: 70%;
+	font-family: Verdana;	
+}
+LI LI
+{
+	font-size: 100%;
+}
+LI A
+{
+	font-size: 100%;
+}
+.linkbox
+{
+	margin-left: 20px;
+	margin-right: 30px;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	width: 175px;
+	float: right;
+	border-right: #0066CC 1px solid;
+	background: #f1f1f1;
+	border-left: #0066CC 1px solid;
+	border-bottom: #0066CC 1px solid;
+}
+.outlineDivTitle
+{
+	background-color: #0066CC;
+	color: #FFFFFF;
+	padding-left: 15px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	font: bold 70% Verdana;
+	color: #ffffff;
+}
+.outlineDiv
+{
+	padding-left: 20px;
+	background-image: URL(/images/blueTriangle.gif);
+	background-repeat: no-repeat;
+	background-position: 6 8;
+	font: 70% verdana;
+	color: #003399;
+	line-height: 200%;
+}  </style>
+</head>
+
+
+<body>
+
+<h1> The F# 2.0 SP1 Free Tools Release</h1>
+
+<p>Welcome to the F# 2.0 SP1
+    Free Tools Release.  F# is a typesafe, scalable, succinct, typed, efficient 
+    programming language for the .NET platform.  
+     
+    The release contains:</p>
+
+<ul> <li>The F# command-line compiler and library components</li>
+     <li>F# Interactive, for dynamic execution and interactive evaluation</li>
+     <li>The F# components for Visual Studio 2008 and Visual Studio 2010</li>
+     <li>Versions of the FSharp.Core library for Silverlight 2.0, 3.0, 4.0 and Windows Phone 7</li>
+</ul>
+<p>Full details can be found 
+  at the <a href="http://msdn.microsoft.com/fsharp">F# Developer Center</a> or the <a href="http://research.microsoft.com/fsharp">F# Microsoft Research website</a> .
+  There you can find additional F# learning resources, links to the F# community and 
+    more.&nbsp;  
+  You may be interested in
+  tracking <a href="http://blogs.msdn.com/dsyme">Don Syme's F# blog</a>
+  and/or  blogging about your own experience using F#. If you are getting started with F#, try the following sites:</p>
+<ul> <li> The <a href="http://msdn.microsoft.com/fsharp">F# developer center</a></li>
+     <li> The F# community site at <a href="http://cs.hubfs.net/">hubFS</a></li>
+     <li> The <a href="http://code.msdn.com/fsharpsamples">F# samples</a></li>
+</ul>
+
+
+    <h3><b>Table of Contents</b></h3>
+<ul> <li> <a href="#Requirements">Requirements</a></li>
+     <li> <a href="#ProvidingFeedback">Providing Feedback</a></li>
+     <li> <a href="#Support">Support</a></li>
+     <li> <a href="#UsingMono">Using F# with Mono</a></li>
+     <li> <a href="#ChangeLists">Change Lists</a></li>
+</ul>     
+
+<h3><a name="Requirements"></a>Requirements</h3>
+
+<ul>
+  <li>To compile F# programs you need one of:
+      
+      <ul>
+        <li>The .NET Framework SDK or .NET Framework Redistributable Components, Versions 2.0, 3.0, 3.5 and 4.0.</li>
+        <li>The freely available Visual Studio 2010 Shell, Integrated Edition. </li>
+        <li>Visual Studio 2010 Professional Edition or above. </li>
+        <li>The freely available Visual Studio 2008 Shell, Integrated Edition. </li>
+        <li>Visual Studio 2008 Standard Edition or above. </li>
+        <li>Another CLI implementation (e.g. Mono).  See the notes on <a href="#UsingMono">using Mono</a> below.  Always ensure you have the
+           latest stable Mono release installed (e.g. the Mono 2.10.1 release or later as of the time of writing) - 
+           some versions of Linux come with very old Mono releases.
+      </ul>
+  </li>
+    <li>If you are not using Visual Studio, you will need an alternate editor.  If you use Emacs you will probably want to use the
+      <a href="http://cs.hubfs.net/forums/thread/5922.aspx">Emacs F# mode.</a>. 
+      You may also like to use MonoDevelop., or a command line prompt 
+      to run F# Interactive and the command line compiler <tt>fsc.exe</tt>.</li>
+
+</ul>
+
+
+
+
+<h3><a name="ProvidingFeedback"></a> Providing Feedback</h3>
+
+<p>
+    Your feedback is highly valuable to the F# team.&nbsp; Please send any comments 
+    to <a href="mailto:fsbugs@microsoft.com">fsbugs@microsoft.com</a>.  Your feedback, as well as suggestions, comments, feature requests, and 
+    bug reports are warmly welcomed.</p>
+<p>
+    If you have questions for the F# user community, post them to one of the sites 
+    listed in the Support section below.</p>
+
+
+
+<h3><a name="Support"></a>Support</h3>
+
+<p>
+    This F# Free Tools Release is not officially supported by Microsoft 
+    product support.&nbsp; F# in Visual Studio 2010 is officially supported.
+    If you have issues or questions that require support, you 
+    can use one of the following resources:</p>
+<ul>
+    <li>The <a href="http://cs.hubfs.net/forums/default.aspx">F# Forums</a> at hubFS</li>
+    <li>Send mail to <a href="mailto:fsbugs@microsoft.com">fsbugs@microsoft.com</a>.</li>
+    <li>Find other F# community resources at <a href="http://msdn.microsoft.com/fsharp">http://msdn.microsoft.com/fsharp</a></li>
+</ul>
+
+<h3><a name="UsingMono"> </a>Using F# with Mono</h3>
+
+<p>
+You may run F# programs in conjunction with other CLI implementations such as <a href="http://www.go-mono.com">Mono</a>.  
+Please read the notes below.  Some more information is 
+available at the <a href="http://strangelights.com/fsharp/Wiki/default.aspx/FSharpWiki.MonoLinux">F# Wiki</a>.
+          
+</p>
+<ul>
+  <li> Mono version 2.10.1 or later is required.
+  <li> Install the F# libraries using <tt>install-mono.sh</tt>.  This script contains 
+      instructions for setting up your Mono environment for conveniently building and 
+      using F# programs.
+     
+  <li> Run the compiler using <tt>mono bin/fsc.exe</tt>. You will want to make an alias for this.  
+
+  <li> Run F# Interactive compiler using <tt>mono bin/fsi.exe</tt>.  You may wish to make an alias for this.
+
+  <li> Ahead-of-time compilation can be useful for F# assemblies, but there have been reports of issues with using this on Mono.
+       If you find out that it works on your version of Mono, go ahead and run it on <tt>fsc.exe</tt>, <tt>fsi.exe</tt>,
+       <tt>FSharp.Compiler.dll</tt>, and <tt>FSharp.Core.dll</tt>  to improve startup times for <tt>mono bin/fsc.exe</tt>.
+
+  <li> F# has in the past exposed Mono bugs in corner cases.  If you see a problem, this is likely
+       to be the result of a bug in Mono. Please
+       be sure to investigate and report these to both the F# team and through the Mono bug reporting process.
+</ul>
+
+
+
+<h3><a name="ChangeLists"></a>Change Lists</h3>
+
+<p>For details of the the last few releases of F#, see these release announcements and notes:</p>
+<ul>
+  <li><a href="http://blogs.msdn.com/b/dsyme/archive/2010/11/10/november-2010-f-2-0-free-tools-update.aspx">F# 2.0.0.0</a> November 2010 Free Tools Update)</li>
+  <li><a href="http://blogs.msdn.com/b/dsyme/archive/2010/08/17/announcing-the-f-2-0-free-tools-for-net-4-0.aspx?wa=wsignin1.0">F# 2.0.0.0</a> (August 2010 CTP Free Tools Update)</li>
+  <li><a href="http://go.microsoft.com/fwlink/?LinkID=151925">F# 2.0.0.0</a> (April 2010 CTP)</li>
+  <li><a href="http://blogs.msdn.com/dsyme/archive/2010/02/10/detailed-release-notes-for-f-february-2010-release.aspx">F# 1.9.9.9</a> (February 2010 CTP)</li>
+  <li><a href="http://blogs.msdn.com/dsyme/archive/2009/10/19/release-notes-for-the-f-october-2009-release.aspx">F# 1.9.7.8</a> (October 2009 CTP)</li>
+  <li><a href="http://blogs.msdn.com/dsyme/archive/2009/05/20/detailed-release-notes-for-the-f-may-2009-ctp-update-and-visual-studio-2010-beta1-releases.aspx">F# 1.9.6.16</a> (May 2009 CTP)</li>
+  <li><a href="http://blogs.msdn.com/dsyme/archive/2008/08/29/detailed-release-notes-for-the-f-september-2008-ctp-release.aspx">F# 1.9.6.2</a> (September 2008 CTP)</li>
+  <li><a href="http://blogs.msdn.com/dsyme/archive/2008/05/02/full-release-notes-for-f-1-9-4.aspx">F# 1.9.4.7</a></li>
+  <li><a href="http://blogs.msdn.com/dsyme/archive/2007/11/30/full-release-notes-for-f-1-9-3-7.aspx">F# 1.9.3.7</a></li> 
+  <li><a href="http://blogs.msdn.com/dsyme/archive/2007/07/27/f-1-9-2-7-released.aspx">F# 1.9.2.7</a></li> 
+  <li><a href="http://blogs.msdn.com/dsyme/archive/2007/04/06/detailed-release-notes-for-1-9-1-8.aspx">F# 1.9.1.8</a></li> 
+  <li><a href="http://blogs.msdn.com/dsyme/archive/2006/11/30/f-1-1-13-detailed-release-notes.aspx">F# 1.1.13</a></li> 
+  <li><a href="http://blogs.msdn.com/dsyme/archive/2006/08/24/715635.aspx">F# 1.1.12.3</a></li> 
+  <li><a href="http://blogs.msdn.com/dsyme/archive/2006/05/27/608541.aspx">F# 1.1.11.7</a></li> 
+  <li><a href="http://blogs.msdn.com/dsyme/archive/2006/01/27/518176.aspx">F# 1.1.8.1</a></li> 
+  <li><a href="http://blogs.msdn.com/dsyme/archive/2005/11/11/491737.aspx">F# 1.1.5</a></li> 
+  <li><a href="http://blogs.msdn.com/dsyme/archive/2005/09/15/Version1116DetailedReleaseNotes.aspx">F# 1.1.1.6</a></li> 
+  <li><a href="http://blogs.msdn.com/dsyme/archive/2005/03/07/388376.aspx">F# 1.0.4.2</a></li> 
+  <li><a href="http://blogs.msdn.com/dsyme/archive/2005/01/29/362861.aspx">F# 1.0.1</a></li> 
+  
+</ul>
+
+</body>
+</html>
