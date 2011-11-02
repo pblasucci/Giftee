@@ -1,6 +1,6 @@
 ﻿@model Giftee.Web.Models.Registration
 @{
-  ViewBag.Title = "Register_Form";
+  ViewBag.Title = "Registration";
 }
 
 <script type="text/javascript" 
@@ -12,34 +12,33 @@
 
 @using (Html.BeginForm())
 {
-  @Html.ValidationSummary(true)
   <fieldset>
     <legend>
       Please enter your first name, last name, and e-mail address.
     </legend>
     <div class="editor-label">
-      @Html.LabelFor(model => model.FirstName,"First Name")
+      @Html.LabelFor(model => model.FirstName)
     </div>
     <div class="editor-field">
       @Html.EditorFor(model => model.FirstName)
       @Html.ValidationMessageFor(model => model.FirstName)
     </div>
     <div class="editor-label">
-      @Html.LabelFor(model => model.LastName, "Last Name")
+      @Html.LabelFor(model => model.LastName)
     </div>
     <div class="editor-field">
       @Html.EditorFor(model => model.LastName)
       @Html.ValidationMessageFor(model => model.LastName)
     </div>
     <div class="editor-label">
-      @Html.LabelFor(model => model.Email, "E-Mail")
+      @Html.LabelFor(model => model.Email)
     </div>
     <div class="editor-field">
       @Html.EditorFor(model => model.Email)
       @Html.ValidationMessageFor(model => model.Email)
     </div>
     <div class="editor-label">
-      @Html.LabelFor(model => model.EmailConfirm,"E-Mail (again)")
+      @Html.LabelFor(model => model.EmailConfirm)
     </div>
     <div class="editor-field">
       @Html.EditorFor(model => model.EmailConfirm)
@@ -50,6 +49,7 @@
     </p>
   </fieldset>
 }
+@Html.ValidationSummary(true)
 <div class="navigate">
   <p>Nevermind... 
   @Html.ActionLink("Take me back to the log on form", 

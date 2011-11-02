@@ -2,7 +2,6 @@
 using log4net;
 using System;
 using System.Linq;
-using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
 using cmd = Giftee.Core.Commands;

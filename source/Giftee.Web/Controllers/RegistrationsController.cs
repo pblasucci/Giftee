@@ -1,7 +1,6 @@
 ﻿using Giftee.Web.Models;
 using log4net;
 using System;
-using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
 using cmd = Giftee.Core.Commands;

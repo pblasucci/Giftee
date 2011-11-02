@@ -6,7 +6,7 @@ namespace Giftee.Web.Controllers
   [Authorize]
   public class GifteesController : Controller
   {
-    static readonly ILog log = LogManager.GetLogger("Giftees");
+    static readonly ILog log = LogManager.GetLogger("Giftee.Web.Models.Giftee");
 
     public GifteePrincipal CurrentUser 
     { 

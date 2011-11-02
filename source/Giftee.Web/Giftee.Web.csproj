@@ -171,16 +171,16 @@
     <Content Include="Views\Passwords\ResetPwd_Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Giftee.Core\Giftee.Core.fsproj">
-      <Project>{C72969F6-E660-402F-8D5F-A552031E68CA}</Project>
-      <Name>Giftee.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Wishes\Wish_List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Wishes\Wish_Form.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Giftee.Core\Giftee.Core.fsproj">
+      <Project>{C72969F6-E660-402F-8D5F-A552031E68CA}</Project>
+      <Name>Giftee.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

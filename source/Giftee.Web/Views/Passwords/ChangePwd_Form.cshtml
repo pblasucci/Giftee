@@ -1,6 +1,6 @@
 ﻿@model Giftee.Web.Models.PasswordSet
 @{
-  ViewBag.Title = "ChangePwd_Form";
+  ViewBag.Title = "Change Password";
 }
 
 <script type="text/javascript" 
@@ -17,26 +17,24 @@
 
 @using (Html.BeginForm())
 {
-  @Html.ValidationSummary(true)
   <fieldset>
     <legend>Please enter your current and desired passwords.</legend>
     <div class="editor-label">
-      @Html.LabelFor(model => model.OldPassword,"Current Password")
+      @Html.LabelFor(model => model.OldPassword)
     </div>
     <div class="editor-field">
       @Html.PasswordFor(model => model.OldPassword)
       @Html.ValidationMessageFor(model => model.OldPassword)
     </div>
     <div class="editor-label">
-      @Html.LabelFor(model => model.NewPassword,"Desired Password")
+      @Html.LabelFor(model => model.NewPassword)
     </div>
     <div class="editor-field">
       @Html.PasswordFor(model => model.NewPassword)
       @Html.ValidationMessageFor(model => model.NewPassword)
     </div>
     <div class="editor-label">
-      @Html.LabelFor(model => model.NewPasswordConfirm,
-                     "Desired Password (again)")
+      @Html.LabelFor(model => model.NewPasswordConfirm)
     </div>
     <div class="editor-field">
       @Html.PasswordFor(model => model.NewPasswordConfirm)
@@ -47,6 +45,7 @@
     </p>
   </fieldset>
 }
+@Html.ValidationSummary(true)
 
 <div class="navigate">
   <p>Nevermind... I'd like to 

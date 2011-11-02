@@ -1,10 +1,10 @@
 ﻿@model Giftee.Web.Models.Wish
 @{
-  ViewBag.Title = "Wish_Form";
   var isNew   = (Model == null) || (Model.ID == Guid.Empty);
   var action  = isNew ? "Create"   : "Update";
   var method  = isNew ? "POST"     : "PUT";
   var command = isNew ? "Add Wish" : "Update Wish";
+  ViewBag.Title = command;
 }
 
 <script type="text/javascript" 
@@ -29,8 +29,8 @@
       <input type="submit" value="@(command)" />
     </p>
   </fieldset>
-  @Html.ValidationSummary(true)
 }
+@Html.ValidationSummary(true)
 
 <div class="navigate">
   <p>Okay, that looks good. Take me 

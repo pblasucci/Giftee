@@ -1,6 +1,6 @@
 ﻿@model Giftee.Web.Models.ForgotPassword
 @{
-  ViewBag.Title = "ResetPwd_Form";
+  ViewBag.Title = "Reset Password";
 }
 
 <script type="text/javascript" 
@@ -17,7 +17,7 @@
     Please enter the e-mail address with which you registered.
     </legend>
     <div class="editor-label">
-      @Html.LabelFor(model => model.Email,"E-Mail")
+      @Html.LabelFor(model => model.Email)
     </div>
     <div class="editor-field">
       @Html.EditorFor(model => model.Email)
@@ -27,12 +27,13 @@
       <input type="submit" value="Change Password" />
     </p>
   </fieldset>
-  @Html.ValidationSummary(true)
 }
+@Html.ValidationSummary(true)
+
 <div class="navigate">
   <p>Nevermind... 
   @Html.ActionLink("Take me back to the log on form",
-                   "Create","Sessions",
-                   new{ httpMethod="GET" },
-                   new{ /* ... */ }).</p>
+                    "Create","Sessions",
+                    new{ httpMethod="GET" },
+                    new{ /* ... */ }).</p>
 </div>

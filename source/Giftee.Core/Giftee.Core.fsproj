@@ -71,7 +71,7 @@
     </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>"%PROGRAMFILES(X86)%\Microsoft SDKs\Windows\v7.0a\Bin\resgen.exe" "$(ProjectDir)Giftee.Core.resx"</PreBuildEvent>
+    <PreBuildEvent>"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0a\Bin\resgen.exe" "$(ProjectDir)Giftee.Core.resx"</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 	     Other similar extension points exist, see Microsoft.Common.targets.

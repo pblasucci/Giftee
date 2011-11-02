@@ -52,7 +52,7 @@ namespace Giftee.Web
     public String FirstName {get{ return _user.IfSome(u => u.FirstName); }}
     public String LastName  {get{ return _user.IfSome(u => u.LastName ); }}
     public String FullName  {get{ return FirstName +" "+ LastName;       }}
-    public String EMail     {get{ return Identity.Name;                  }}
+    public String Email     {get{ return Identity.Name;                  }}
 
     public override bool IsInRole(String role)
     {

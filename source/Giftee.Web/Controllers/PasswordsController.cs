@@ -1,7 +1,6 @@
 ﻿using Giftee.Web.Models;
 using log4net;
 using System;
-using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
 using cmd = Giftee.Core.Commands;
@@ -10,7 +9,7 @@ namespace Giftee.Web.Controllers
 {
   public class PasswordsController : Controller
   {
-    static readonly ILog log = LogManager.GetLogger("Passwords");
+    static readonly ILog log = LogManager.GetLogger("Giftee.Web.Models.Password");
 
     [HttpGet]
     public ActionResult Create()
@@ -43,8 +42,9 @@ namespace Giftee.Web.Controllers
         return RedirectToAction("Create",new{httpMethod="GET"});
       }
 
-      log.Info("Password Reset: {0})",User.Identity.Name);
-      return View("ResetPwd_Success",User as GifteePrincipal);
+      log.Info("Password Reset: {0}",info.Email);
+      ViewBag.Email = info.Email; 
+      return View("ResetPwd_Success");
     }
 
     [HttpGet,Authorize]

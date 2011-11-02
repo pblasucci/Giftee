@@ -2,7 +2,6 @@
 using log4net;
 using Microsoft.FSharp.Core;
 using System;
-using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 using System.Web.Security;
 

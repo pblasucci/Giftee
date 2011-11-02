@@ -98,6 +98,7 @@ module Commands =
 
   [<CompiledName("InsertWish")>]
   let insertWish giftorID rank summary =
+    //TODO: send notification to giftor
     Db.insert { ID       = Guid.NewGuid()
                 GiftorID = giftorID
                 Rank     = rank
@@ -108,10 +109,12 @@ module Commands =
 
   [<CompiledName("UpdateWish")>]
   let updateWish wishID rank summary = 
+    //TODO: send notification to giftor
     let wish = Db.find<Wish> [ wishID ]
     Db.update {wish with Rank    = rank; 
                          Summary = summary} |> ignore
 
   [<CompiledName("DeleteWish")>]
   let deleteWish wishID =
+    //MAYBE: send notification to giftor?
     Db.execute R.SQL.deleteWish [ "wishID" @= wishID ]

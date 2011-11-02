@@ -6,39 +6,63 @@ namespace Giftee.Web.Models
 {
   public class Registration
   {
-    [Required, StringLength(64)]
+    [Required, 
+     StringLength(64), 
+     Display(Name="First Name")]
     public String FirstName { get; set; }
-    [Required, StringLength(64)]
+
+    [Required, 
+     StringLength(64), 
+     Display(Name="Last Name")]
     public String LastName { get; set; }
-    [Required, StringLength(255)]
+    
+    [Required, 
+     StringLength(255), 
+     Display(Name="E-Mail")]
     public String Email { get; set; }
-    [Required, Compare("Email")]
+    
+    [Required, 
+     Compare("Email",
+             ErrorMessage="This does not match the E-Mail field."), 
+     Display(Name="E-Mail (again)")]
     public String EmailConfirm { get; set; }
   }
 
   public class LogOn
   {
-    [Required]
+    [Required,
+     Display(Name="E-Mail")]
     public String Email { get; set; }
-    [Required]
+    
+    [Required,
+     Display(Name="Password")]
     public String Password { get; set; }
+    
+    [Display(Name="Remember Me")]
     public Boolean Persist { get; set; }
   }
 
   public class ForgotPassword
   {
-    [Required]
+    [Required,
+     Display(Name="E-Mail")]
     public String Email { get; set; }
   }
 
   public class PasswordSet
   {
-    [Required]
-    public String OldPassword { get; set; }
-    [Required]
-    public String NewPassword { get; set; }
     [Required,
-     Compare("NewPassword")]
+     Display(Name="Current Password")]
+    public String OldPassword { get; set; }
+    
+    [Required,
+     Display(Name="Desired Password")]
+    public String NewPassword { get; set; }
+    
+    [Required,
+     Compare("NewPassword",
+             ErrorMessage="This does not match the Desired Password field."),
+     Display(Name="Desired Password (again)")]
     public String NewPasswordConfirm { get; set; }
   }
 
@@ -46,9 +70,7 @@ namespace Giftee.Web.Models
   {
     public Guid ID { get; set; }
 
-    [Required]
-    public Int32 Rank { get; set; }
-    [Required]
-    public String Summary { get; set; }
+    [Required] public Int32 Rank     { get; set; }
+    [Required] public String Summary { get; set; }
   }
 }

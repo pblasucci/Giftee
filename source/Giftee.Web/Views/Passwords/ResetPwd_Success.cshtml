@@ -1,6 +1,20 @@
 ﻿@model Giftee.Web.GifteePrincipal
 @{
-  ViewBag.Title = "ResetPwd_Success";
+  ViewBag.Title = "Password Reset";
+  var sender = System.Configuration.ConfigurationManager.AppSettings["system_email"];
 }
 
-<h2>ResetPwd_Success</h2>
+<fieldset>
+  <legend>Password Changed</legend>
+  
+  <p>Good news... You're Giftee password has been changed to a new 
+  randomly-generatoed one. (Don't worry -- you can change it to something 
+  more memorable whence next you log on.)</p>
+  
+  <p>In a short while, an e-mail with further information will be
+  sent to you at <em>@(ViewBag.Email)</em>. Please check to make sure 
+  any messages from <strong>@(sender)</strong> haven't accidentally been sucked 
+  up by your spam filter.</p>
+  
+  <p>Happy Holidays!</p>
+</fieldset>
