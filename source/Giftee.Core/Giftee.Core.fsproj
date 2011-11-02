@@ -49,12 +49,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="FSharp.Core">
+      <HintPath>..\..\packages\FSharp.Core.2.0.0.0\lib\FSharp.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FSharp.PowerPack">
       <HintPath>..\..\packages\FSPowerPack.Core.Community.2.0.0.0\Lib\Net40\FSharp.PowerPack.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />
-    <Reference Include="FSharp.Core" />
     <Reference Include="Soma.Core">
       <HintPath>..\..\packages\Soma.1.5.0.0\lib\Net40\Soma.Core.dll</HintPath>
       <Private>True</Private>
