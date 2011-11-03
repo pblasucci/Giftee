@@ -53,9 +53,18 @@
                    "Select","Giftees",
                    new{ httpMethod="GET" },
                    new{ /* ... */ }).</p>
-  <p>Nevermind... Instead, I'll  
+  <p>Actually, I'll  
   @Html.ActionLink("review my wishlist",
                    "Gather","Wishes",
                    new{ httpMethod="GET" },
                    new{ /* ... */ }).</p>
+@if (User.IsInRole("Admin"))
+{
+  <p>I need to perform some
+  @Html.ActionLink("administration",
+                    "Gather","Giftors",
+                    new { httpMethod = "GET" },
+                    new { /* ... */ }) 
+  tasks.</p>
+}
 </div>

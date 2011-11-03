@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
@@ -69,8 +70,30 @@ namespace Giftee.Web.Models
   public class Wish
   {
     public Guid ID { get; set; }
-
+    
     [Required] public Int32 Rank     { get; set; }
     [Required] public String Summary { get; set; }
+  }
+
+  public class Giftor
+  {
+    [Required] 
+    public Guid ID { get; set; }
+
+    public String FirstName { get; set; }
+    public String LastName  { get; set; }
+    
+    [Required, 
+     StringLength(64), 
+     Display(Name="Group As")]
+    public String GroupAs { get; set; }
+  }
+
+  public class Exchange
+  {
+    [Required,StringLength(64)] public String GiftorFirstName { get;set; }
+    [Required,StringLength(64)] public String GiftorLastName  { get;set; }
+    [Required,StringLength(64)] public String GifteeFirstName { get;set; }
+    [Required,StringLength(64)] public String GifteeLastName  { get;set; }
   }
 }

@@ -132,7 +132,7 @@
   <data name="MailMsg_PwdChanged" xml:space="preserve">
     <value>Your Giftee password has been reset.
 
-When next you visit http://giftee.ws, please log on with the following information:
+When next you visit http://giftee.apphb.com, please log on with the following information:
             
     E-Mail: {0}
     Password: {1}
@@ -143,7 +143,7 @@ Seasons Greetings!</value>
   <data name="MailMsg_Registered" xml:space="preserve">
     <value>Thanks for creating an account with Giftee.
 
-In order to start using Giftee, you'll need to visit http://giftee.ws and enter the following information:
+In order to start using Giftee, you'll need to visit http://giftee.apphb.com and enter the following information:
             
     E-Mail: {0}
     Password: {1}
@@ -151,12 +151,16 @@ In order to start using Giftee, you'll need to visit http://giftee.ws and enter 
 Happy Holidays!</value>
     <comment>Message sent to newly registered accounts.</comment>
   </data>
+  <data name="SQL_AllGiftors" xml:space="preserve">
+    <value>select ID,FirstName,LastName,Email,[Password]=0x,IsAdmin,GroupAs,GifteeID from Giftors</value>
+    <comment>Queries all giftor records (omitting password).</comment>
+  </data>
   <data name="SQL_DeleteWishByID" xml:space="preserve">
     <value>delete from Wishes where ID = /* wishID */''</value>
     <comment>Delete wish record with the gven ID.</comment>
   </data>
   <data name="SQL_GiftorByEmail" xml:space="preserve">
-    <value>select ID,FirstName,LastName,Email,Password,IsAdmin,GroupAs,GifteeID from Giftors where Email = /* email */''</value>
+    <value>select ID,FirstName,LastName,Email,[Password],IsAdmin,GroupAs,GifteeID from Giftors where Email = /* email */''</value>
     <comment>Queries a giftor record with the given e-mail.</comment>
   </data>
   <data name="SQL_GiftorWishes" xml:space="preserve">

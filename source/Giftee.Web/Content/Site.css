@@ -103,7 +103,9 @@ form.delete
   display: inline-block;  
 }
 
-div.logoff_form input[type=submit],form.delete input[type=submit]
+div.logoff_form input[type=submit],
+form.delete input[type=submit],
+form.set_group input[type=submit]
 {
   background-color: transparent;
   color: #423d8e;
@@ -152,7 +154,27 @@ table
   margin: 10px auto 1.5em auto;
 }
 
-td.col_rank
+.col_head
+{
+  width: auto;
+  white-space: nowrap;
+  font-size: 0.85em;
+  color: #999;
+  text-align: left;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+
+.col_text
+{
+  width: auto;
+  white-space: nowrap;
+  text-align: left;
+  vertical-align: top;
+  padding: 10px 4px;
+}
+
+.col_num
 {
   width: auto;
   white-space: nowrap;
@@ -161,25 +183,30 @@ td.col_rank
   padding: 10px 10px;
 }
 
-td.col_wrap
+.col_wrap
 {
   width: 100%;
   max-width: 320px;
-  text-align: left;
-  vertical-align: top;
-  padding: 10px 2px;
 }
 
-td.col_drop
+.col_form
 {
   width: auto;
   white-space: nowrap;
   text-align: left;
   vertical-align: top;
-  padding: 10px 2px;
+  padding: 10px 4px;
 }
 
-td.col_empty
+.col_form input[type=text]
+{
+  max-width: 75px;
+  width: auto;
+  border: 1px solid #e5e5e5;
+  margin: 0;
+}
+  
+.col_empty
 {
   width: 100%;
   color: #999;

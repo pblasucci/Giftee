@@ -1,0 +1,66 @@
+﻿@model IList<Giftee.Web.Models.Giftor>
+
+@{
+    ViewBag.Title = "Administration";
+}
+
+<script type="text/javascript" 
+        src="@Url.Content("~/Scripts/jquery.validate.min.js")">
+        </script>
+<script type="text/javascript" 
+        src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")">
+        </script>
+
+<fieldset>
+  <legend>Giftors</legend>
+  @using (Html.BeginForm("Update", "Giftors", new { httpMethod = "POST" }))
+  {
+  <table>
+    <thead>
+      <tr>
+        <th class="col_head">First Name</th>
+        <th class="col_head">Last Name</th>
+        <th class="col_head">Group As</th>
+      </tr>
+    </thead>
+    <tbody>
+    @for (var i = 0; i < Model.Count(); i++)
+    {
+    <tr>
+      <td class="col_text">
+        @Html.DisplayFor(m => m[i].FirstName)
+      </td>
+      <td class="col_text">
+        @Html.DisplayFor(m => m[i].LastName)
+      </td>
+      <td class="col_form">
+        @Html.HiddenFor(m => m[i].ID)
+        @Html.EditorFor(m => m[i].GroupAs)
+        @Html.ValidationMessageFor(m => m[i].GroupAs,"*")
+      </td>
+    </tr>
+    }
+    </tbody>
+  </table>
+  <p><input type="submit" value="Save Changes" /></p>
+  }
+</fieldset>
+@Html.ValidationSummary(true)
+
+<div class="navigate">
+  <p>This looks good. Let me 
+  @Html.ActionLink("view info about my Giftee",
+                   "Select","Giftees",
+                   new{ httpMethod="GET" },
+                   new{ /* ... */ }).</p>
+  <p>Now I want to   
+  @Html.ActionLink("review my wishlist",
+                   "Gather","Wishes",
+                   new{ httpMethod="GET" },
+                   new{ /* ... */ }).</p>
+  <p>It's time to 
+  @Html.ActionLink("change my password",
+                   "Update","Passwords",
+                   new{ httpMethod="GET" },
+                   new{ /* ... */ }).</p>
+</div>

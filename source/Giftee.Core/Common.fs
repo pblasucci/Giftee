@@ -1,5 +1,6 @@
 ﻿namespace Giftee.Core
 
+open System
 open System.Resources
 open System.Reflection
 
@@ -21,6 +22,8 @@ module Resources =
     let pwdChanged = resxMgr.GetString("MailLbl_PwdChanged")
   
   module SQL =
-    let giftorByEmail = resxMgr.GetString("SQL_GiftorByEmail")
-    let giftorWishes  = resxMgr.GetString("SQL_GiftorWishes")
-    let deleteWish    = resxMgr.GetString("SQL_DeleteWishByID")
+    let allGiftors          = resxMgr.GetString("SQL_AllGiftors")
+    let giftorByEmail       = resxMgr.GetString("SQL_GiftorByEmail")
+    let giftorWishes        = resxMgr.GetString("SQL_GiftorWishes")
+    let deleteWish          = resxMgr.GetString("SQL_DeleteWishByID")
+    let areGifteesAssigned  = resxMgr.GetString("SQL_GifteesAssigned")

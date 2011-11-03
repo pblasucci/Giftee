@@ -32,7 +32,8 @@ module Commands =
         FirstName = firstName
         LastName  = lastName
         Email     = email'.Address
-        Password  = encrypted } 
+        Password  = encrypted
+        GroupAs   = Some(lastName) } 
     |> Database.insert 
     |> ignore
     
@@ -93,7 +94,7 @@ module Commands =
     tx.Complete()
 
   [<CompiledName("GatherWishes")>]
-  let gatherWishes (giftorID:Guid) =
+  let gatherWishes giftorID =
     Db.query<Wish> R.SQL.giftorWishes ["giftorID" @= giftorID]
 
   [<CompiledName("InsertWish")>]
@@ -118,3 +119,12 @@ module Commands =
   let deleteWish wishID =
     //MAYBE: send notification to giftor?
     Db.execute R.SQL.deleteWish [ "wishID" @= wishID ]
+
+  [<CompiledName("GatherGiftors")>]
+  let gatherGiftors () = Db.query<Giftor> R.SQL.allGiftors []
+
+  [<CompiledName("GatherGiftors")>]
+  let updateGiftor giftorID groupAs = 
+    groupAs |> validate "Group As"
+    let giftor = Db.find<Giftor> [ giftorID ]
+    Db.update {giftor with GroupAs = Some(groupAs)} |> ignore

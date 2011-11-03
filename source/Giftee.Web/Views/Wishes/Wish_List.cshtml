@@ -26,11 +26,11 @@
       {
         itemCount++;
       <tr>
-        <td class="col_rank">@(itemCount).</td>
-        <td class="col_wrap">
+        <td class="col_num">@(itemCount).</td>
+        <td class="col_text col_wrap">
         <pre class="scroll_block">@Html.DisplayFor(modelItem => item.Summary)</pre>
         </td>
-        <td class="col_drop">
+        <td class="col_form">
           @using (Html.BeginForm("Delete", "Wishes", 
                                   new { wishID     = item.ID,
                                         httpMethod = "DELETE" },
@@ -63,6 +63,15 @@
                    "Update","Passwords",
                    new{ httpMethod="GET" },
                    new{ /* ... */ }).</p>
+@if (User.IsInRole("Admin"))
+{
+  <p>I need to perform some
+  @Html.ActionLink("administration",
+                    "Gather","Giftors",
+                    new { httpMethod = "GET" },
+                    new { /* ... */ }) 
+  tasks.</p>
+}
 </div>
 
 <script type="text/javascript">
@@ -71,9 +80,11 @@ $(document).ready(function(){
     .mouseover (function(){$(this).css("text-decoration","none"     );})
     .mouseleave(function(){$(this).css("text-decoration","underline");});
   $("form.delete").submit(function(){ 
-    return confirm("You are about to remove a wish for\n\n"
+    return confirm("You are about to remove a wish for\n"
+                  + "-------------------------------------------------\n\n"
                   + $(this).attr("data-item")
-                  +"\n\nThis can not be undone. Continue anyway?");
+                  + "\n\n-------------------------------------------------"
+                  +"\nThis can not be undone. Continue anyway?");
   });
 });
 </script>

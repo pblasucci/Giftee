@@ -19,4 +19,13 @@
                    "Update","Passwords",
                    new{ httpMethod="GET" },
                    new{ /* ... */ }), just now.</p>
+@if (User.IsInRole("Admin"))
+{
+  <p>I need to perform some
+  @Html.ActionLink("administration",
+                    "Gather","Giftors",
+                    new { httpMethod = "GET" },
+                    new { /* ... */ }) 
+  tasks.</p>
+}
 </div>

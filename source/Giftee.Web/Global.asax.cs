@@ -111,6 +111,35 @@ namespace Giftee.Web
 
       #endregion
 
+      #region Administration
+
+      routes.MapRoute(null,"admin",
+                      new { controller  = "Giftors",
+                            action      = "Gather" },
+                      new { httpMethod  = GET });
+
+      routes.MapRoute(null,"giftors",
+                      new { controller  = "Giftors",
+                            action      = "Update" },
+                      new { httpMethod  = POST });
+
+      routes.MapRoute(null,"exchanges",
+                      new { controller  = "Exchanges",
+                            action      = "Review" },
+                      new { httpMethod  = GET });
+      
+      routes.MapRoute(null,"exchanges",
+                      new { controller  = "Exchanges",
+                            action      = "Commit" },
+                      new { httpMethod  = POST });
+      
+      routes.MapRoute(null,"exchanges",
+                      new { controller  = "Exchanges",
+                            action      = "Reset" },
+                      new { httpMethod  = DELETE });
+
+      #endregion
+
       routes.MapRoute(null,"",
                       new { controller  = "Giftees",
                             action      = "Select" },
