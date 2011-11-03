@@ -78,6 +78,7 @@
     <Compile Include="Library\GifteePrincipal.cs" />
     <Compile Include="Library\HttpMethodConstraintEx.cs" />
     <Compile Include="Library\Models.cs" />
+    <Compile Include="Library\RequireHttpsAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

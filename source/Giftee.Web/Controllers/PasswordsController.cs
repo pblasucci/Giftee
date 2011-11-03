@@ -47,7 +47,7 @@ namespace Giftee.Web.Controllers
       return View("ResetPwd_Success");
     }
 
-    [HttpGet,Authorize]
+    [HttpGet,RequireHttps,Authorize]
     public ActionResult Update()
     {
       ModelState.Merge(TempData["modelState"] as ModelStateDictionary);
@@ -55,7 +55,7 @@ namespace Giftee.Web.Controllers
       return View("ChangePwd_Form");
     }
     
-    [HttpPost,Authorize]
+    [HttpPost,RequireHttps,Authorize]
     public ActionResult Update(PasswordSet info)
     {
       if (ModelState.IsValid)

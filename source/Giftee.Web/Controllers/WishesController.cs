@@ -9,7 +9,7 @@ using int32Option = Microsoft.FSharp.Core.FSharpOption<System.Int32>;
 
 namespace Giftee.Web.Controllers
 {
-  [Authorize]
+  [RequireHttps,Authorize]
   public class WishesController : Controller
   {
     static readonly ILog log = LogManager.GetLogger(typeof(Wish));

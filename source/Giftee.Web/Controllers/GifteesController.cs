@@ -3,7 +3,7 @@ using log4net;
 
 namespace Giftee.Web.Controllers
 {
-  [Authorize]
+  [RequireHttps,Authorize]
   public class GifteesController : Controller
   {
     static readonly ILog log = LogManager.GetLogger("Giftee.Web.Models.Giftee");

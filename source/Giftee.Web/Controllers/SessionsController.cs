@@ -10,6 +10,7 @@ using userOption = Microsoft.FSharp.Core.FSharpOption<Giftee.Core.Models.User>;
 
 namespace Giftee.Web.Controllers
 {
+  [RequireHttps]
   public class SessionsController : Controller
   {
     static readonly ILog log = LogManager.GetLogger(typeof(LogOn));

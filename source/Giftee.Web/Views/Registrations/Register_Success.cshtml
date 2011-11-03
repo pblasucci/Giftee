@@ -3,7 +3,7 @@
 @{
   ViewBag.Title = "Registration";
   var displayName = String.Format("{0} {1}",Model.FirstName,Model.LastName);
-  var sender = System.Configuration.ConfigurationManager.AppSettings["system_email"];
+  var sender = System.Configuration.ConfigurationManager.AppSettings["POSTMASTER_ADDR"];
 }
 
 <fieldset>
