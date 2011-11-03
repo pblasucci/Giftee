@@ -1,20 +1,24 @@
 ﻿@model Giftee.Web.GifteePrincipal
+
+@using cfgMgr = System.Configuration.ConfigurationManager;
+
 @{
   ViewBag.Title = "Password Reset";
-  var sender = System.Configuration.ConfigurationManager.AppSettings["POSTMASTER_ADDR"];
+  var sender = 
+    cfgMgr.AppSettings["POSTMASTER_ADDR"].Split(' ')[1].Trim('<','>');
 }
 
 <fieldset>
   <legend>Password Changed</legend>
   
   <p>Good news... You're Giftee password has been changed to a new 
-  randomly-generatoed one. (Don't worry -- you can change it to something 
+  randomly-generated one. (Don't worry -- you can change it to something 
   more memorable whence next you log on.)</p>
   
   <p>In a short while, an e-mail with further information will be
   sent to you at <em>@(ViewBag.Email)</em>. Please check to make sure 
-  any messages from <strong>@(sender)</strong> haven't accidentally been sucked 
-  up by your spam filter.</p>
+  any messages from <strong>@(sender)</strong> haven't accidentally been 
+  sucked up by your spam filter.</p>
   
   <p>Happy Holidays!</p>
 </fieldset>
