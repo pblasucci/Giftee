@@ -113,7 +113,7 @@ namespace Giftee.Web
 
       #region Administration
 
-      routes.MapRoute(null,"admin",
+      routes.MapRoute(null,"giftors",
                       new { controller  = "Giftors",
                             action      = "Gather" },
                       new { httpMethod  = GET });
@@ -127,7 +127,7 @@ namespace Giftee.Web
                       new { controller  = "Exchanges",
                             action      = "Review" },
                       new { httpMethod  = GET });
-      
+
       routes.MapRoute(null,"exchanges",
                       new { controller  = "Exchanges",
                             action      = "Commit" },
@@ -135,7 +135,7 @@ namespace Giftee.Web
       
       routes.MapRoute(null,"exchanges",
                       new { controller  = "Exchanges",
-                            action      = "Reset" },
+                            action      = "Delete" },
                       new { httpMethod  = DELETE });
 
       #endregion

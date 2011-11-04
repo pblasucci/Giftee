@@ -1,24 +1,61 @@
-﻿@{
+﻿@model Microsoft.FSharp.Core.FSharpOption<Giftee.Core.Models.Giftee>
+@using Microsoft.FSharp.Core
+@{
   ViewBag.Title = "My Giftee";
 }
 
 <fieldset>
   <legend>My Giftee</legend>
-  <p>Apologies, <span>@(ViewBag.DisplayName)</span>, 
+  @if (OptionModule.IsNone(Model))
+  {
+  <p>Apologies, <em>@(ViewBag.DisplayName)</em>, 
   but Giftee names haven't been picked yet.</p>
   <p>In the meantime, why don't you get started  
   @Html.ActionLink("building a wishlist",
                    "Gather","Wishes",
                    new{ httpMethod="GET" },
                    new{ /* ... */ })?</p>
+  } else {
+    var gifteeName = Model.Value.FirstName +" "+ Model.Value.LastName;
+  <p>Welcome back, <em>@(ViewBag.DisplayName)</em>.</p>
+  <p>You picked <strong>@(gifteeName)</strong> from the good ol' 
+  hat-full-of-names. Lucky you! </p>
+    if (Model.Value.Wishlist.Count() > 0)
+    {
+      var wishes = Model.Value.Wishlist.ToArray();
+  <p>@(gifteeName) has provided the follow wishlist items as a way of 
+  indicating the sort of gifts @(gifteeName) would like this year.</p>
+  <table class="inset_list">
+    <tbody>
+      @for (var i = 0; i < wishes.Length; i++)
+      {
+      <tr>
+        <td class="col_num">@(i + 1).</td>
+        <td class="col_text col_wrap">
+        <pre class="scroll_block">@Html.DisplayFor(_ => wishes[i])</pre>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>    
+    }
+    else
+    {
+      <p>At this time, @(Model.Value.FirstName) hasn't added any wishlist 
+      items. But why not take the opportunity to surprise and impress 
+      @(Model.Value.FirstName) with something imaginative this year? When 
+      in doubt, people always like gift cards (for gasoline or iTunes or 
+      what-not) and booze... and one can never have too many socks!</p>
+    } 
+  }
 </fieldset>
 
 <div class="navigate">
-  <p>I'd like to 
-  @Html.ActionLink("change my password",
-                   "Update","Passwords",
+  <p>Let's go   
+  @Html.ActionLink("review my wishlist",
+                   "Gather","Wishes",
                    new{ httpMethod="GET" },
-                   new{ /* ... */ }), just now.</p>
+                   new{ /* ... */ }).</p>
 @if (User.IsInRole("Admin"))
 {
   <p>I need to perform some
@@ -28,4 +65,9 @@
                     new { /* ... */ }) 
   tasks.</p>
 }
+  <p>I'd like to 
+  @Html.ActionLink("change my password",
+                   "Update","Passwords",
+                   new{ httpMethod="GET" },
+                   new{ /* ... */ }), just now.</p>
 </div>

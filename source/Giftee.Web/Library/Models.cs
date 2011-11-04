@@ -91,9 +91,10 @@ namespace Giftee.Web.Models
 
   public class Exchange
   {
-    [Required,StringLength(64)] public String GiftorFirstName { get;set; }
-    [Required,StringLength(64)] public String GiftorLastName  { get;set; }
-    [Required,StringLength(64)] public String GifteeFirstName { get;set; }
-    [Required,StringLength(64)] public String GifteeLastName  { get;set; }
+    [Required] public Guid GiftorID { get; set; }
+    [Required] public Guid GifteeID { get; set; }
+
+    public String GiftorDisplayName { get; set; }
+    public String GifteeDisplayName { get; set; }   
   }
 }

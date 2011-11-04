@@ -1,12 +1,17 @@
-﻿using System.Web.Mvc;
-using log4net;
+﻿using log4net;
+using System;
+using System.Web.Mvc;
+
+using cmd = Giftee.Core.Commands;
 
 namespace Giftee.Web.Controllers
 {
   [RequireHttps,Authorize]
   public class GifteesController : Controller
   {
-    static readonly ILog log = LogManager.GetLogger("Giftee.Web.Models.Giftee");
+    const String MODEL = "Giftee.Web.Models.Giftee";
+
+    static readonly ILog log = LogManager.GetLogger(MODEL);
 
     public GifteePrincipal CurrentUser 
     { 
@@ -16,8 +21,9 @@ namespace Giftee.Web.Controllers
     [HttpGet]
     public ActionResult Select()
     {
+      var giftee = cmd.SelectGiftee(CurrentUser.ID);
       ViewBag.DisplayName = CurrentUser.FullName;
-      return View("GifteeDetails");
+      return View("GifteeDetails",giftee);
     }
   }
 }

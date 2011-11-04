@@ -1,0 +1,52 @@
+﻿@model IList<Giftee.Web.Models.Exchange>
+
+@{
+   var action = ViewBag.IsFinal ? "Delete" : "Commit";
+   var method = ViewBag.IsFinal ? "DELETE" : "POST";
+}
+
+<fieldset>
+  <legend>Giftors and Giftees</legend>
+  @if (Model.Count == 0)
+    {
+    <table>
+      <tbody>
+        <tr>
+          <td class="col_empty">There are an insufficient number of 
+          registered participants. Giftee assignment requires at least
+          2 participants in 2 different groups. Please re-visit this form 
+          after more people have registered.</td>
+        </tr>
+      </tbody>  
+    </table>
+    } else {
+    using (Html.BeginForm(action, "Exchanges", new { httpMethod = method }))
+    {
+      if (ViewBag.IsFinal) { @Html.HttpMethodOverride(method); }
+    <table>
+      <thead>
+        <tr>
+          <th class="col_head">Giftor</th>
+          <th class="col_head">Giftee</th>
+        </tr>
+      </thead>
+      <tbody>
+      @for (var i = 0; i < Model.Count(); i++)
+      {
+      <tr>
+        <td class="col_text">
+          @Html.HiddenFor(m => m[i].GiftorID)
+          @Html.DisplayFor(m => m[i].GiftorDisplayName)
+        </td>
+        <td class="col_text">
+          @Html.HiddenFor(m => m[i].GifteeID)
+          @Html.DisplayFor(m => m[i].GifteeDisplayName)
+        </td>
+      </tr>
+      }
+      </tbody>
+    </table>
+    <p><input type="submit" value="@(action)" /></p>
+    }
+  }
+</fieldset>

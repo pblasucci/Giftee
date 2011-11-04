@@ -152,8 +152,8 @@ Happy Holidays!</value>
     <comment>Message sent to newly registered accounts.</comment>
   </data>
   <data name="SQL_AllGiftors" xml:space="preserve">
-    <value>select ID,FirstName,LastName,Email,[Password]=0x,IsAdmin,GroupAs,GifteeID from Giftors</value>
-    <comment>Queries all giftor records (omitting password).</comment>
+    <value>select ID,FirstName,LastName,Email,[Password],IsAdmin,GroupAs,GifteeID from Giftors</value>
+    <comment>Queries all giftor records.</comment>
   </data>
   <data name="SQL_DeleteWishByID" xml:space="preserve">
     <value>delete from Wishes where ID = /* wishID */''</value>
@@ -162,6 +162,10 @@ Happy Holidays!</value>
   <data name="SQL_GiftorByEmail" xml:space="preserve">
     <value>select ID,FirstName,LastName,Email,[Password],IsAdmin,GroupAs,GifteeID from Giftors where Email = /* email */''</value>
     <comment>Queries a giftor record with the given e-mail.</comment>
+  </data>
+  <data name="SQL_GiftorGiftee" xml:space="preserve">
+    <value>select r.ID,r.FirstName,r.LastName,r.Email,r.[Password],r.IsAdmin,r.GroupAs,r.GifteeID from Giftors r join Giftors g on r.ID = g.GifteeID where g.ID = /* giftorID */''</value>
+    <comment>Queries the giftee record associated with a given giftor ID.</comment>
   </data>
   <data name="SQL_GiftorWishes" xml:space="preserve">
     <value>select ID,GiftorID,Rank,Summary from Wishes where GiftorID = /* giftorID */'' order by Rank asc</value>

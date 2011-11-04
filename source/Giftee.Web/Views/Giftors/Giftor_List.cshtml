@@ -47,6 +47,8 @@
 </fieldset>
 @Html.ValidationSummary(true)
 
+@Html.Action("Review","Exchanges",new { httpMethod = "GET" })
+
 <div class="navigate">
   <p>This looks good. Let me 
   @Html.ActionLink("view info about my Giftee",

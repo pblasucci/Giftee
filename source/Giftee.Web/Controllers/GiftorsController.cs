@@ -45,23 +45,5 @@ namespace Giftee.Web.Controllers
       }
       return RedirectToAction("Gather","Giftors",new{ httpMethod="GET" });
     }
-
-    //[HttpPut]
-    //public ActionResult Update(Guid giftorID, Giftor info)
-    //{
-    //  try
-    //  {
-    //    //MAYBE: double-check validation?
-    //    //cmd.UpdateGiftor(giftorID,groupAs);
-    //    //throw new DivideByZeroException();
-    //  }
-    //  catch (Exception ex)
-    //  {
-    //    log.Warn(ex);
-    //    ModelState.AddModelError("",ex.Message);
-    //    TempData["modelState"] = ModelState;
-    //  }
-    //  return RedirectToAction("Gather","Giftors",new{ httpMethod="GET" });
-    //}
   }
 }

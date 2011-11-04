@@ -154,6 +154,17 @@ table
   margin: 10px auto 1.5em auto;
 }
 
+.inset_list
+{
+  border-top: 4px double #e5e5e5;
+  margin-top: 15px;
+}
+  
+.inset_list td
+{
+  padding-top: 25px;
+}
+  
 .col_head
 {
   width: auto;

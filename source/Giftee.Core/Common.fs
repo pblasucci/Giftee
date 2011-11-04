@@ -22,8 +22,8 @@ module Resources =
     let pwdChanged = resxMgr.GetString("MailLbl_PwdChanged")
   
   module SQL =
-    let allGiftors          = resxMgr.GetString("SQL_AllGiftors")
-    let giftorByEmail       = resxMgr.GetString("SQL_GiftorByEmail")
-    let giftorWishes        = resxMgr.GetString("SQL_GiftorWishes")
-    let deleteWish          = resxMgr.GetString("SQL_DeleteWishByID")
-    let areGifteesAssigned  = resxMgr.GetString("SQL_GifteesAssigned")
+    let allGiftors    = resxMgr.GetString("SQL_AllGiftors")
+    let giftorByEmail = resxMgr.GetString("SQL_GiftorByEmail")
+    let giftorWishes  = resxMgr.GetString("SQL_GiftorWishes")
+    let deleteWish    = resxMgr.GetString("SQL_DeleteWishByID")
+    let giftorGiftee  = resxMgr.GetString("SQL_GiftorGiftee")

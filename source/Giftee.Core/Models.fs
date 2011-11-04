@@ -55,3 +55,22 @@ type User =
             Email     = email;
             Roles     = [ yield "User"
                           if isAdmin then yield "Admin" ] }
+
+type Giftee =
+  { ID        : Guid
+    FirstName : string
+    LastName  : string
+    Email     : string 
+    Wishlist  : string seq }
+  with 
+    static member ofGiftor {Giftor.FirstName = fName;
+                                   LastName  = lName;
+                                   ID        = identity;
+                                   Email     = email;}
+                            wishlist =
+      {Giftee.ID        = identity;
+              FirstName = fName;
+              LastName  = lName;
+              Email     = email;
+              Wishlist  = wishlist 
+                          |> Seq.map (fun {Wish.Summary = text} -> text);}
