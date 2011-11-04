@@ -13,13 +13,15 @@ module Resources =
 
   module MailMsg =
 
-    let registered = resxMgr.GetString("MailMsg_Registered")
-    let pwdChanged = resxMgr.GetString("MailMsg_PwdChanged")
+    let registered  = resxMgr.GetString("MailMsg_Registered")
+    let pwdChanged  = resxMgr.GetString("MailMsg_PwdChanged")
+    let listChanged = resxMgr.GetString("MailMsg_WishlistChanged")
     
   module MailSubj =
 
-    let registered = resxMgr.GetString("MailLbl_Registered")
-    let pwdChanged = resxMgr.GetString("MailLbl_PwdChanged")
+    let registered  = resxMgr.GetString("MailLbl_Registered")
+    let pwdChanged  = resxMgr.GetString("MailLbl_PwdChanged")
+    let listChanged = resxMgr.GetString("MailLbl_WishlistChanged")
   
   module SQL =
     let allGiftors    = resxMgr.GetString("SQL_AllGiftors")

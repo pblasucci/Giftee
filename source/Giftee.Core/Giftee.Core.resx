@@ -129,6 +129,10 @@
     <value>You've Registered with Giftee!</value>
     <comment>Message title for MailMsg_Registered.</comment>
   </data>
+  <data name="MailLbl_WishListChanged" xml:space="preserve">
+    <value>Activity Notification from Giftee</value>
+    <comment>Message title for MailMsg_WishlistChanged.</comment>
+  </data>
   <data name="MailMsg_PwdChanged" xml:space="preserve">
     <value>Your Giftee password has been reset.
 
@@ -151,6 +155,15 @@ In order to start using Giftee, you'll need to visit http://giftee.apphb.com and
 Happy Holidays!</value>
     <comment>Message sent to newly registered accounts.</comment>
   </data>
+  <data name="MailMsg_WishlistChanged" xml:space="preserve">
+    <value>This is just a quick note to let you know your Giftee has made a change to his or her wishlist.
+
+Maybe a new item was added? Or perhaps a size was adjusted? Find out by visiting
+http://giftee.apphb.com
+
+Merry Christmas!</value>
+    <comment>Message send to giftor when giftee edits his or her wishlist.</comment>
+  </data>
   <data name="SQL_AllGiftors" xml:space="preserve">
     <value>select ID,FirstName,LastName,Email,[Password],IsAdmin,GroupAs,GifteeID from Giftors</value>
     <comment>Queries all giftor records.</comment>
@@ -170,5 +183,9 @@ Happy Holidays!</value>
   <data name="SQL_GiftorWishes" xml:space="preserve">
     <value>select ID,GiftorID,Rank,Summary from Wishes where GiftorID = /* giftorID */'' order by Rank asc</value>
     <comment>Queries all wish records with the given giftor ID.</comment>
+  </data>
+  <data name="SQ_GifteeGiftorEmail" xml:space="preserve">
+    <value>select g.Email from Giftors r join Giftors g on r.ID = g.GifteeID where r.ID = /* gifteeID */''</value>
+    <comment>Queries the giftor e-mail address for a given giftee ID.</comment>
   </data>
 </root>

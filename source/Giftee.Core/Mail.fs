@@ -51,3 +51,9 @@ module Mail =
           R.MailSubj.pwdChanged
           (String.Format(R.MailMsg.pwdChanged,email,password))
           ["password_reset"] 
+
+  let sendWishlistChange email =
+    send  systemAddress [email]
+          R.MailSubj.listChanged
+          R.MailMsg.listChanged
+          ["password_reset"] 
